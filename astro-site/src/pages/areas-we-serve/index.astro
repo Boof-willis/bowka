@@ -1,0 +1,234 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import StickyMobileCTA from '../../components/StickyMobileCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const cities = [
+	{ 
+		name: "Provo", 
+		county: "Utah County", 
+		href: "/areas-we-serve/provo",
+		description: "Home of BYU and the Provo River Trail" 
+	},
+	{ 
+		name: "Orem", 
+		county: "Utah County", 
+		href: "/areas-we-serve/orem",
+		description: "Family-friendly city at the base of Mount Timpanogos" 
+	},
+	{ 
+		name: "Lehi", 
+		county: "Utah County", 
+		href: "#",
+		description: "Fast-growing tech hub and family communities" 
+	},
+	{ 
+		name: "American Fork", 
+		county: "Utah County", 
+		href: "#",
+		description: "Historic charm near American Fork Canyon" 
+	},
+	{ 
+		name: "Saratoga Springs", 
+		county: "Utah County", 
+		href: "#",
+		description: "Waterfront living and new construction" 
+	},
+	{ 
+		name: "Eagle Mountain", 
+		county: "Utah County", 
+		href: "#",
+		description: "Expanding communities and new developments" 
+	},
+	{ 
+		name: "Salt Lake City", 
+		county: "Salt Lake County", 
+		href: "/areas-we-serve/salt-lake-city",
+		description: "Utah's capital and cultural center" 
+	},
+	{ 
+		name: "Sandy", 
+		county: "Salt Lake County", 
+		href: "#",
+		description: "Growing city near the Wasatch foothills" 
+	},
+	{ 
+		name: "Draper", 
+		county: "Salt Lake County", 
+		href: "#",
+		description: "Upscale neighborhoods and mountain access" 
+	},
+	{ 
+		name: "South Jordan", 
+		county: "Salt Lake County", 
+		href: "#",
+		description: "Master-planned communities and parks" 
+	},
+	{ 
+		name: "West Jordan", 
+		county: "Salt Lake County", 
+		href: "#",
+		description: "Established neighborhoods and convenient location" 
+	},
+	{ 
+		name: "Murray", 
+		county: "Salt Lake County", 
+		href: "#",
+		description: "Central location with mature trees" 
+	},
+	{ 
+		name: "Bountiful", 
+		county: "Davis County", 
+		href: "#",
+		description: "Historic city with valley views" 
+	},
+	{ 
+		name: "Layton", 
+		county: "Davis County", 
+		href: "#",
+		description: "Growing community near Hill Air Force Base" 
+	},
+	{ 
+		name: "Kaysville", 
+		county: "Davis County", 
+		href: "#",
+		description: "Small-town feel with modern amenities" 
+	},
+	{ 
+		name: "Farmington", 
+		county: "Davis County", 
+		href: "#",
+		description: "Historic downtown and Lagoon amusement park" 
+	}
+];
+---
+
+<BaseLayout
+	title="Service Areas | Bowka Construction — Utah, Salt Lake & Davis Counties"
+	description="Bowka Construction serves homeowners throughout Utah County, Salt Lake County, and Davis County. See all cities and communities we serve."
+>
+	<Header />
+
+	<!-- Hero -->
+	<section class="relative pt-40 pb-24 md:pt-48 md:pb-32 bg-black text-white overflow-hidden">
+		<!-- Background Overlay -->
+		<div class="absolute inset-0 z-0">
+			<img 
+				src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2670&auto=format&fit=crop" 
+				alt="Wasatch Front Mountains" 
+				class="w-full h-full object-cover opacity-20"
+			/>
+			<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black"></div>
+		</div>
+
+		<div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+			<div class="max-w-4xl mx-auto">
+				<div class="reveal">
+					<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Our Service Area</span>
+					<h1 class="text-4xl md:text-6xl font-semibold tracking-tight mb-8 leading-[1.1]">
+						Serving the Entire<br class="hidden md:block" /> Wasatch Front.
+					</h1>
+				</div>
+				<p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-10 max-w-2xl mx-auto reveal delay-100">
+					From Provo to Bountiful, we provide premium general contracting services across Utah County, Salt Lake County, and Davis County.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Breadcrumbs -->
+	<div class="bg-black border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12 py-6">
+			<Breadcrumbs items={[{ label: "Areas We Serve", href: "/areas-we-serve" }]} />
+		</div>
+	</div>
+
+	<!-- Intro -->
+	<section class="py-24 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12 text-center">
+			<div class="max-w-3xl mx-auto reveal">
+				<p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed">
+					Bowka Construction is based in Utah County and serves homeowners throughout the Wasatch Front. Whether you're in a new development, an established neighborhood, or a rural community, we're here to help with basement finishing, remodeling, concrete work, additions, and new construction.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Cities Grid -->
+	<section class="py-24 md:py-32 bg-neutral-950 text-white border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-900 border border-neutral-900">
+				{cities.map((city, index) => (
+					<div class:list={[
+						"p-10 md:p-12 transition-all duration-500 reveal",
+						`delay-${(index % 4) * 100}`,
+						city.href !== "#" ? "bg-neutral-950 hover:bg-neutral-900 group cursor-pointer" : "bg-neutral-950 opacity-60"
+					]}>
+						{city.href !== "#" ? (
+							<a href={city.href} class="block h-full">
+								<div class="flex flex-col h-full">
+									<div class="flex items-start justify-between mb-6">
+										<h3 class="text-xl font-semibold tracking-tight text-white group-hover:text-amber transition-colors">{city.name}</h3>
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+									</div>
+									<span class="block text-[10px] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-4">{city.county}</span>
+									<p class="text-sm text-neutral-400 font-light leading-relaxed mt-auto">{city.description}</p>
+								</div>
+							</a>
+						) : (
+							<div class="flex flex-col h-full">
+								<h3 class="text-xl font-semibold tracking-tight text-neutral-400 mb-6">{city.name}</h3>
+								<span class="block text-[10px] font-semibold tracking-[0.2em] uppercase text-neutral-600 mb-4">{city.county}</span>
+								<p class="text-sm text-neutral-600 font-light leading-relaxed mt-auto">{city.description}</p>
+							</div>
+						)}
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Map -->
+	<section class="py-24 md:py-32 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="text-center mb-16 reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Location</span>
+				<h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-6">Our Service Area</h2>
+				<p class="text-neutral-400 font-light text-lg max-w-2xl mx-auto">We cover the entire Wasatch Front — from Eagle Mountain to Farmington.</p>
+			</div>
+			
+			<div class="w-full h-[500px] bg-neutral-900 rounded-sm overflow-hidden border border-neutral-800 reveal delay-100">
+				<iframe 
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789!2d-111.891047!3d40.760779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87523d9488d1316b%3A0xacc6993a67d71f54!2sUtah%2C%20USA!5e0!3m2!1sen!2s!4v1600000000000!5m2!1sen!2s" 
+					width="100%" 
+					height="100%" 
+					style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);" 
+					allowfullscreen="" 
+					loading="lazy"
+					title="Bowka Construction service area map"
+				></iframe>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-neutral-950 text-white border-t border-neutral-900 text-center px-6">
+		<div class="container mx-auto max-w-3xl reveal">
+			<h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-8 leading-tight">Not Sure If We Serve<br>Your Area?</h2>
+			<p class="text-neutral-400 font-light text-lg mb-12">Give us a call. If we're not the right fit for your specific location, we'll do our best to point you in the right direction.</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="/#estimate" class="px-8 py-4 bg-white text-black text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-colors rounded-full">
+					Get Your Free Estimate
+				</a>
+				<a href="tel:8015550123" class="px-8 py-4 border border-neutral-800 text-white text-xs font-semibold uppercase tracking-widest hover:bg-neutral-900 transition-colors rounded-full">
+					Call (801) 555-0123
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+	<StickyMobileCTA />
+</BaseLayout>

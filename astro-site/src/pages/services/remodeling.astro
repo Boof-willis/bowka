@@ -1,0 +1,110 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Remodeling and Renovation",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { "@type": "State", "name": "Utah" },
+	"description": "Full-service home remodeling and renovation in Utah. Space transformation, open-concept conversions, and whole-home remodels."
+};
+---
+
+<ServiceLayout
+	title="Home Remodeling & Renovation Utah | Bowka Construction"
+	description="Transform your home with Bowka Construction. Space transformation, open-concept conversions, and whole-home remodels. Serving Utah, Salt Lake, and Davis Counties."
+	keywords="home remodeling Utah, renovation contractor Utah County, whole home remodel Salt Lake, space transformation, open concept Utah"
+	heroImage="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+	heroImageAlt="Home renovation and remodeling project"
+	h1="Home Remodeling & Renovation in Utah"
+	intro="Reimagine your living space. From single-room updates to whole-home transformations, we help Utah families create homes that work better for how they live."
+	includedItems={[
+		"Whole-home or single-room remodels",
+		"Space repurposing (office to nursery, formal dining to flex space)",
+		"Open-concept conversions",
+		"Structural modifications and load-bearing wall removal",
+		"Flooring, paint, and finish upgrades",
+		"Built-in storage and custom carpentry",
+		"Electrical and lighting updates",
+		"Plumbing modifications",
+		"Permit handling and code compliance"
+	]}
+	processSteps={[
+		{
+			number: "1",
+			title: "Discovery & Planning",
+			description: "We walk through your home, discuss your goals, and identify opportunities. We'll help you prioritize projects and establish a realistic budget."
+		},
+		{
+			number: "2",
+			title: "Design & Estimate",
+			description: "We create a plan, provide a detailed estimate, and walk you through the timeline. You'll know what to expect before we start."
+		},
+		{
+			number: "3",
+			title: "Construction",
+			description: "We execute the work efficiently and keep your home livable. Communication is constant."
+		},
+		{
+			number: "4",
+			title: "Walkthrough & Warranty",
+			description: "Final inspection, walkthrough, and warranty. We're here for any follow-up needs."
+		}
+	]}
+	faqs={[
+		{
+			question: "What's the difference between remodeling and renovation?",
+			answer: "The terms are often used interchangeably. Remodeling typically refers to changing the structure or layout of a space (removing walls, adding rooms). Renovation usually means updating or restoring existing features (new paint, flooring, fixtures). We do both."
+		},
+		{
+			question: "Can you remove a wall to create an open floor plan?",
+			answer: "Yes. We evaluate whether the wall is load-bearing, engineer the proper support (beam, posts, or header), and handle all structural work and permits. Open-concept conversions are one of our most common projects."
+		},
+		{
+			question: "Do you do whole-home remodels?",
+			answer: "Yes. Whole-home remodels involve updating multiple rooms or an entire house. These projects typically include kitchens, bathrooms, flooring, paint, lighting, and finish upgrades throughout. We manage the entire project from design to completion."
+		},
+		{
+			question: "Can I stay in my home during a remodel?",
+			answer: "It depends on the scope. For single-room remodels, most families stay. For whole-home remodels, especially those involving kitchens and bathrooms, some families temporarily relocate. We work with you to minimize disruption."
+		}
+	]}
+	relatedServices={[
+		{ title: "Kitchen Remodeling", href: "/services/kitchen-remodeling", icon: "solar:chef-hat-heart-linear" },
+		{ title: "Basement Finishing", href: "/services/basement-finishing", icon: "solar:sofa-linear" },
+		{ title: "Home Additions", href: "/services/additions", icon: "solar:home-add-linear" }
+	]}
+	schema={serviceSchema}
+	breadcrumbs={[
+		{ label: "Services", href: "/services" },
+		{ label: "Remodeling", href: "/services/remodeling" }
+	]}
+>
+	<div class="content-prose">
+		<h2>When It's Time to Remodel</h2>
+		<p>
+			Your home should work for you — not the other way around. If your layout feels cramped, rooms aren't being used, or finishes are dated, a remodel can solve those problems and add significant value.
+		</p>
+		<p>
+			Common triggers: growing family needing more functional space, working from home requiring a dedicated office, aging finishes (1990s oak trim, popcorn ceilings), preparing to sell, or simply wanting to love your home again.
+		</p>
+
+		<h2>Popular Remodeling Projects</h2>
+		<ul>
+			<li><strong>Open-Concept Conversions</strong> — Removing walls between kitchen, dining, and living areas to create flow and connection.</li>
+			<li><strong>Room Repurposing</strong> — Converting a formal dining room into a home office, playroom, or flex space. Turning an unused bedroom into a walk-in closet or nursery.</li>
+			<li><strong>Whole-Home Updates</strong> — New flooring, paint, lighting, trim, and fixtures throughout to modernize and unify the aesthetic.</li>
+			<li><strong>Garage Conversions</strong> — Turning an attached garage into livable space (office, gym, bedroom).</li>
+		</ul>
+
+		<h2>What to Expect</h2>
+		<p>
+			Every remodel starts with a conversation. We want to understand how you use your home, what's not working, and what you envision. From there, we create a plan, provide a transparent estimate, and manage the project from start to finish. Our goal is to deliver a space you love while making the process as smooth as possible.
+		</p>
+	</div>
+</ServiceLayout>

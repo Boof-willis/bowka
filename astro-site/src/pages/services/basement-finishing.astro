@@ -1,0 +1,170 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Basement Finishing",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { "@type": "State", "name": "Utah" },
+	"description": "Professional basement finishing services in Utah. Transform your unfinished basement into functional living space — bedrooms, family rooms, home theaters, and mother-in-law apartments. Licensed B100 contractor serving Utah County, Salt Lake County, and Davis County."
+};
+---
+
+<ServiceLayout
+	title="Basement Finishing Utah | Bowka Construction — Licensed B100 Contractor"
+	description="Turn your unfinished basement into beautiful living space. Licensed basement finishing contractor serving Utah County, Salt Lake County, and Davis County. Free estimates. Family-owned and fully insured."
+	keywords="basement finishing Utah, finish basement Utah County, basement remodel Salt Lake County, basement contractor Lehi, basement finishing Draper, finished basement cost Utah"
+	heroImage="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+	heroImageAlt="Finished basement with home theater and comfortable seating"
+	h1="Basement Finishing in Utah"
+	intro="Transform unused concrete into comfortable living space where your family actually wants to spend time. Licensed, insured, and specialized in Utah basement finishing."
+	includedItems={[
+		"Full design consultation and layout planning",
+		"Permit acquisition and code compliance",
+		"Framing, drywall, and professional finishing",
+		"Electrical and lighting installation",
+		"Egress window installation (for bedrooms)",
+		"Bathroom rough-in and finish work",
+		"Flooring (carpet, LVP, tile)",
+		"Trim, doors, and closet systems",
+		"Final inspection and walkthrough"
+	]}
+	processSteps={[
+		{
+			number: "1",
+			title: "Free Consultation & Design",
+			description: "We visit your home, measure your basement, discuss your goals, and create a preliminary layout. You'll leave with a clear sense of what's possible and a ballpark budget."
+		},
+		{
+			number: "2",
+			title: "Detailed Estimate & Planning",
+			description: "We provide a detailed, line-item estimate and finalized plans. Once approved, we handle all permit applications and scheduling with your local building department."
+		},
+		{
+			number: "3",
+			title: "Construction & Communication",
+			description: "Our crew works efficiently and keeps your home as clean as possible. You'll receive regular updates, and Brady is always available to answer questions or discuss changes."
+		},
+		{
+			number: "4",
+			title: "Final Walkthrough & Inspection",
+			description: "We walk through the finished space together, ensure you're 100% satisfied, and coordinate the final inspection. You get a warranty and our ongoing support."
+		}
+	]}
+	faqs={[
+		{
+			question: "How much does it cost to finish a basement in Utah?",
+			answer: "Most basement finishing projects in Utah County range from $40,000 to $80,000, depending on square footage, layout complexity, and finish level. A basic 1,000 sq ft basement with one bedroom and bathroom typically starts around $50,000–$60,000. High-end finishes, home theaters, wet bars, and multiple bathrooms will push costs higher. We provide transparent, detailed estimates so you know exactly where your money is going."
+		},
+		{
+			question: "How long does a basement finish take?",
+			answer: "A typical basement finishing project takes 6–10 weeks from start to final inspection. Factors that affect timeline include size, complexity (multiple rooms, bathrooms, custom features), and permit approval time. We give you a realistic schedule upfront and keep you updated if anything changes."
+		},
+		{
+			question: "Do I need a permit to finish my basement in Utah?",
+			answer: "Yes. In Utah County, Salt Lake County, and Davis County, basement finishing requires a building permit, especially if you're adding bedrooms (which require egress windows), electrical work, or plumbing. Bowka Construction handles all permit applications, inspections, and code compliance for you."
+		},
+		{
+			question: "Can you add a bedroom or bathroom to my finished basement?",
+			answer: "Absolutely. We specialize in functional basement layouts that include bedrooms (with proper egress windows and code-compliant window wells), full bathrooms, kitchenettes, and laundry hookups. Many Utah families finish basements specifically to add rental income potential or accommodate multi-generational living."
+		},
+		{
+			question: "What's the difference between a basic finish and a high-end finish?",
+			answer: "A basic finish includes quality but budget-friendly materials: carpet or LVP flooring, standard drywall texture, basic lighting, and builder-grade fixtures. A high-end finish includes luxury vinyl plank or tile flooring, custom trim and wainscoting, recessed lighting and dimmer controls, upgraded fixtures and finishes, and custom built-ins or wet bars. We'll walk you through the options and show you the cost difference so you can make the best choice for your budget and goals."
+		},
+		{
+			question: "Do you work in new construction neighborhoods like Saratoga Springs and Eagle Mountain?",
+			answer: "Yes. Many of our clients live in newer homes in Saratoga Springs, Eagle Mountain, Lehi (Traverse Mountain), and other Utah County developments where homes are delivered with unfinished basements. We're familiar with local code requirements and common builder layouts in these areas."
+		}
+	]}
+	testimonial={{
+		quote: "Bowka finished our basement in 6 weeks and the quality is incredible. Brady kept us informed every step of the way. We now have a game room, bedroom, and bathroom that our kids love.",
+		author: "Josh & Sarah M.",
+		location: "Lehi, UT",
+		service: "Basement Finishing"
+	}}
+	relatedServices={[
+		{ title: "Bathroom Remodeling", href: "/services/bathroom-remodeling", icon: "solar:bath-linear" },
+		{ title: "Home Additions", href: "/services/additions", icon: "solar:home-add-linear" },
+		{ title: "General Remodeling", href: "/services/remodeling", icon: "solar:layers-linear" }
+	]}
+	schema={serviceSchema}
+	breadcrumbs={[
+		{ label: "Services", href: "/services" },
+		{ label: "Basement Finishing", href: "/services/basement-finishing" }
+	]}
+>
+	<div class="content-prose">
+		<h2>Why Finish Your Basement in Utah?</h2>
+		<p>
+			If you bought a home in one of Utah's booming new construction neighborhoods — Saratoga Springs, Eagle Mountain, Lehi, Herriman — there's a good chance your basement is still unfinished. That's hundreds or even thousands of square feet of unused space sitting below your main floor.
+		</p>
+		<p>
+			Finishing your basement isn't just about adding square footage. It's about adding value, flexibility, and comfort. Whether you need a mother-in-law apartment to accommodate aging parents, extra bedrooms as your family grows, a dedicated play space so toys aren't taking over your main floor, or rental income potential, a finished basement gives you options.
+		</p>
+
+		<h2>What Makes Bowka Different?</h2>
+		<p>
+			Basement finishing is one of our core specialties. We've worked on dozens of basements across Utah County, Salt Lake County, and Davis County — from basic family rooms to fully equipped mother-in-law apartments with kitchens, bathrooms, and separate entrances.
+		</p>
+		<p>
+			We know Utah code requirements inside and out, including egress window specs, ceiling height minimums, and bedroom requirements. We handle permitting, pass inspections on the first try, and finish on schedule. Most importantly, we treat your home with respect and keep you informed every single day.
+		</p>
+
+		<h2>Common Basement Layouts We Build</h2>
+		<ul>
+			<li><strong>Family Room + Storage</strong> — Open-concept entertainment space with built-in storage for seasonal items, sports gear, and holiday decorations.</li>
+			<li><strong>Bedroom + Bathroom</strong> — One or two bedrooms with a shared or private bathroom, perfect for teens, guests, or rental income.</li>
+			<li><strong>Mother-in-Law Apartment</strong> — Full apartment with kitchen or kitchenette, bathroom, bedroom, living area, and separate entrance. These are increasingly popular in Utah as multi-generational living becomes more common.</li>
+			<li><strong>Home Theater + Bar</strong> — Dedicated movie room with tiered seating, sound insulation, and a wet bar for entertaining.</li>
+			<li><strong>Home Office / Gym</strong> — Quiet workspace away from the main floor or a home gym with rubber flooring and wall-mounted equipment.</li>
+		</ul>
+
+		<h2>Basement Finishing Timeline & What to Expect</h2>
+		<p>
+			Here's what a typical basement finishing project looks like from start to finish:
+		</p>
+		<ul>
+			<li><strong>Week 0:</strong> Design consultation and estimate. We measure your space, discuss your vision, and provide a detailed proposal.</li>
+			<li><strong>Weeks 1-2:</strong> Permit submission and approval. Utah County typically takes 1–2 weeks. We handle all paperwork.</li>
+			<li><strong>Weeks 3-4:</strong> Framing, electrical rough-in, plumbing rough-in. Walls go up, outlets and light switch locations are established.</li>
+			<li><strong>Weeks 5-6:</strong> Insulation, drywall, and texture. Inspections happen during this phase.</li>
+			<li><strong>Weeks 7-8:</strong> Paint, trim, doors, and flooring installation.</li>
+			<li><strong>Weeks 9-10:</strong> Final electrical and plumbing fixtures, finish carpentry, and final walkthrough.</li>
+		</ul>
+		<p>
+			Total project time: <strong>6–10 weeks</strong>, depending on complexity. We stay on schedule and communicate clearly if anything changes.
+		</p>
+
+		<h2>Egress Windows: What You Need to Know</h2>
+		<p>
+			If you're adding a bedroom in your basement, Utah building code requires an <strong>egress window</strong> — a window large enough for emergency escape and rescue access. Egress windows must meet specific size requirements (minimum 5.7 square feet of opening, minimum 24" height and 20" width) and be paired with a code-compliant window well with a gravel base and ladder or steps.
+		</p>
+		<p>
+			We install egress windows on every basement bedroom. It's not optional, and it's a critical safety feature. We handle excavation, window well installation, and backfill as part of our basement finishing service.
+		</p>
+
+		<h2>Serving Utah County, Salt Lake County, and Davis County</h2>
+		<p>
+			Bowka Construction is based in Utah County and serves homeowners throughout the Wasatch Front. We frequently work in:
+		</p>
+		<ul>
+			<li>Lehi, Saratoga Springs, Eagle Mountain, American Fork, Pleasant Grove (Utah County)</li>
+			<li>Draper, Sandy, South Jordan, Herriman, West Jordan, Murray, Midvale (Salt Lake County)</li>
+			<li>Bountiful, Layton, Kaysville, Farmington (Davis County)</li>
+		</ul>
+		<p>
+			If you're located in or near these areas and want to finish your basement, we'd love to give you a free estimate.
+		</p>
+
+		<h2>Ready to Finish Your Basement?</h2>
+		<p>
+			Let's talk about your project. Whether you're in the early planning stages or ready to move forward, we'll give you honest advice, a transparent estimate, and a realistic timeline.
+		</p>
+	</div>
+</ServiceLayout>

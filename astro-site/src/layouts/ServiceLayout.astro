@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	keywords: string;
+	heroImage: string;
+	heroImageAlt: string;
+	h1: string;
+	intro: string;
+	includedItems: string[];
+	processSteps: Array<{number: string; title: string; description: string;}>;
+	faqs: Array<{question: string; answer: string;}>;
+	testimonial?: {quote: string; author: string; location: string; service: string;};
+	relatedServices: Array<{title: string; href: string; icon: string;}>;
+	schema: object;
+	breadcrumbs: Array<{label: string; href: string;}>;
+}
+
+const {
+	title,
+	description,
+	keywords,
+	heroImage,
+	heroImageAlt,
+	h1,
+	intro,
+	includedItems,
+	processSteps,
+	faqs,
+	testimonial,
+	relatedServices,
+	schema,
+	breadcrumbs
+} = Astro.props;
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map(faq => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": faq.answer
+		}
+	}))
+};
+
+const combinedSchema = [schema, faqSchema];
+---
+
+<BaseLayout 
+	title={title}
+	description={description}
+	keywords={keywords}
+	schema={combinedSchema}
+>
+	<Header />
+	
+	<!-- Hero -->
+	<section class="relative pt-40 pb-24 lg:pt-56 lg:pb-40 overflow-hidden bg-black text-white">
+		<div class="absolute inset-0 z-0">
+			<img 
+				src={heroImage} 
+				alt={heroImageAlt}
+				class="w-full h-full object-cover opacity-30"
+			/>
+			<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black"></div>
+		</div>
+
+		<div class="relative z-10 container mx-auto px-6 md:px-12">
+			<div class="max-w-4xl">
+				<div class="reveal">
+					<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Service Details</span>
+					<h1 class="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-8">
+						{h1}
+					</h1>
+				</div>
+				
+				<p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-10 max-w-2xl reveal delay-100">
+					{intro}
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4 reveal delay-200">
+					<a href="/#estimate" class="px-8 py-4 bg-white text-black text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-colors rounded-full">
+						Get A Free Estimate
+					</a>
+					<a href="tel:8015550123" class="px-8 py-4 border border-neutral-800 text-white text-xs font-semibold uppercase tracking-widest hover:bg-neutral-900 transition-colors rounded-full">
+						Call (801) 555-0123
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Breadcrumbs -->
+	<div class="bg-black border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12 py-6">
+			<Breadcrumbs items={breadcrumbs} />
+		</div>
+	</div>
+
+	<!-- Content Body -->
+	<section class="py-24 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="max-w-4xl mx-auto prose prose-invert prose-neutral prose-lg prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-p:font-light prose-p:text-neutral-400 prose-li:text-neutral-400 prose-li:font-light reveal">
+				<slot />
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included -->
+	<section class="py-24 bg-neutral-950 text-white border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-16 reveal">
+					<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Scope of Work</span>
+					<h2 class="text-3xl md:text-4xl font-semibold tracking-tight">What's Included</h2>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 reveal delay-100">
+					{includedItems.map(item => (
+						<div class="flex items-start gap-4 p-4 rounded-lg bg-neutral-900/50 border border-neutral-900">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span class="text-neutral-300 font-light">{item}</span>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Process Steps -->
+	<section class="py-24 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-16 reveal">
+					<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Methodology</span>
+					<h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Our Process</h2>
+				</div>
+				
+				<div class="space-y-12 reveal delay-100">
+					{processSteps.map((step, index) => (
+						<div class="flex flex-col md:flex-row gap-8 items-start relative">
+							{index !== processSteps.length - 1 && (
+								<div class="absolute left-6 top-16 bottom-[-32px] w-px bg-neutral-800 hidden md:block"></div>
+							)}
+							<div class="flex-shrink-0 w-12 h-12 rounded-full border border-neutral-800 flex items-center justify-center text-neutral-400 font-semibold text-lg bg-neutral-950 z-10">
+								{step.number}
+							</div>
+							<div class="pt-2">
+								<h3 class="text-xl font-semibold tracking-tight mb-3">{step.title}</h3>
+								<p class="text-neutral-400 font-light leading-relaxed">{step.description}</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonial (if provided) -->
+	{testimonial && (
+		<section class="py-24 bg-neutral-950 border-y border-neutral-900">
+			<div class="container mx-auto px-6 md:px-12 text-center reveal">
+				<div class="max-w-4xl mx-auto">
+					<div class="flex justify-center gap-1 mb-10">
+						{[...Array(5)].map(() => (
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-neutral-700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						))}
+					</div>
+					<blockquote class="text-2xl md:text-3xl font-semibold tracking-tight leading-relaxed mb-10 text-white">
+						"{testimonial.quote}"
+					</blockquote>
+					<cite class="not-italic block">
+						<span class="block text-sm font-semibold tracking-widest uppercase text-white mb-2">{testimonial.author}</span>
+						<span class="text-xs font-medium tracking-widest uppercase text-neutral-500">{testimonial.location} • {testimonial.service}</span>
+					</cite>
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQs -->
+	<section class="py-24 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="max-w-3xl mx-auto">
+				<div class="text-center mb-16 reveal">
+					<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Questions</span>
+					<h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Common Inquiries</h2>
+				</div>
+				
+				<div class="space-y-4 reveal delay-100">
+					{faqs.map(faq => (
+						<details class="group bg-neutral-900/30 border border-neutral-800 rounded-lg overflow-hidden transition-all duration-300">
+							<summary class="flex justify-between items-center cursor-pointer p-6 text-left font-semibold tracking-tight hover:bg-neutral-900/50 transition-colors list-none">
+								<span class="pr-8">{faq.question}</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 transform group-open:rotate-180 transition-transform"><path d="m6 9 6 6 6-6"/></svg>
+							</summary>
+							<div class="px-6 pb-6 text-neutral-400 font-light leading-relaxed">
+								<p>{faq.answer}</p>
+							</div>
+						</details>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<section class="py-24 bg-neutral-950 border-t border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="text-center mb-16 reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Explore</span>
+				<h2 class="text-2xl font-semibold tracking-tight">You Might Also Need</h2>
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal delay-100">
+				{relatedServices.map(service => (
+					<a href={service.href} class="group p-8 md:p-10 rounded-lg bg-neutral-900/50 border border-neutral-900 hover:bg-neutral-900 transition-all duration-500">
+						<h3 class="text-lg font-semibold tracking-tight mb-4 group-hover:text-white transition-colors">{service.title}</h3>
+						<span class="text-xs font-semibold uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors flex items-center gap-2">
+							Learn more
+							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+						</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+	<StickyMobileCTA />
+</BaseLayout>
+

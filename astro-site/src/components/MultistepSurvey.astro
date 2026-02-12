@@ -1,0 +1,273 @@
+---
+---
+
+<!-- Progress Bar -->
+<div class="mb-8" id="survey-progress-wrapper">
+	<div class="flex justify-between items-center mb-3">
+		<span class="text-xs font-semibold tracking-widest uppercase text-neutral-500" id="survey-step-label">Step 1 of 4</span>
+	</div>
+	<div class="w-full h-0.5 bg-neutral-800 rounded-full overflow-hidden">
+		<div class="h-full bg-white transition-all duration-500 ease-out" id="survey-progress-bar" style="width: 25%"></div>
+	</div>
+</div>
+
+<!-- Step 1: Project Type -->
+<div id="survey-step-1" class="step-panel">
+	<h3 class="text-lg font-medium tracking-tight mb-6">What type of project are you planning?</h3>
+	<div class="grid grid-cols-2 gap-3">
+		<button type="button" class="service-option p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 hover:bg-neutral-750 transition-all duration-200 group" data-value="basement-finishing">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 mb-2 group-hover:text-white transition-colors"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"></path><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"></path><path d="M4 18v2"></path><path d="M20 18v2"></path><path d="M12 4v9"></path></svg>
+			<span class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">Basement Finishing</span>
+		</button>
+		<button type="button" class="service-option p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 hover:bg-neutral-750 transition-all duration-200 group" data-value="kitchen-remodeling">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 mb-2 group-hover:text-white transition-colors"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+			<span class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">Kitchen Remodel</span>
+		</button>
+		<button type="button" class="service-option p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 hover:bg-neutral-750 transition-all duration-200 group" data-value="bathroom-remodeling">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 mb-2 group-hover:text-white transition-colors"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" x2="8" y1="5" y2="7"/><line x1="2" x2="22" y1="12" y2="12"/><line x1="7" x2="7" y1="19" y2="21"/><line x1="17" x2="17" y1="19" y2="21"/></svg>
+			<span class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">Bathroom Remodel</span>
+		</button>
+		<button type="button" class="service-option p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 hover:bg-neutral-750 transition-all duration-200 group" data-value="renovation">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 mb-2 group-hover:text-white transition-colors"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"></path><path d="m18 15 4-4"></path><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"></path></svg>
+			<span class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">Renovation</span>
+		</button>
+		<button type="button" class="service-option p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 hover:bg-neutral-750 transition-all duration-200 group" data-value="concrete">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 mb-2 group-hover:text-white transition-colors"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>
+			<span class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">Concrete</span>
+		</button>
+		<button type="button" class="service-option p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 hover:bg-neutral-750 transition-all duration-200 group" data-value="addition">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 mb-2 group-hover:text-white transition-colors"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+			<span class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">Addition</span>
+		</button>
+		<button type="button" class="service-option p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 hover:bg-neutral-750 transition-all duration-200 group" data-value="new-construction">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 mb-2 group-hover:text-white transition-colors"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"></path><path d="m8 6 2-2"></path><path d="m18 16 2-2"></path><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"></path><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>
+			<span class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">New Build</span>
+		</button>
+		<button type="button" class="service-option p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 hover:bg-neutral-750 transition-all duration-200 group" data-value="other">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 mb-2 group-hover:text-white transition-colors"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+			<span class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">Something Else</span>
+		</button>
+	</div>
+</div>
+
+<!-- Step 2: Timeline -->
+<div id="survey-step-2" class="step-panel hidden">
+	<h3 class="text-lg font-medium tracking-tight mb-6">What's your timeline?</h3>
+	<div class="flex flex-col gap-3">
+		<button type="button" class="timeline-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200 flex justify-between items-center" data-value="ready-now">
+			<span class="text-sm font-medium text-neutral-300">Ready to start</span>
+			<span class="text-xs text-neutral-500">ASAP</span>
+		</button>
+		<button type="button" class="timeline-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200 flex justify-between items-center" data-value="1-3-months">
+			<span class="text-sm font-medium text-neutral-300">1 – 3 months</span>
+			<span class="text-xs text-neutral-500">Soon</span>
+		</button>
+		<button type="button" class="timeline-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200 flex justify-between items-center" data-value="3-6-months">
+			<span class="text-sm font-medium text-neutral-300">3 – 6 months</span>
+			<span class="text-xs text-neutral-500">Planning ahead</span>
+		</button>
+		<button type="button" class="timeline-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200 flex justify-between items-center" data-value="exploring">
+			<span class="text-sm font-medium text-neutral-300">Just exploring</span>
+			<span class="text-xs text-neutral-500">No rush</span>
+		</button>
+	</div>
+	<button type="button" class="back-btn mt-6 text-xs font-medium tracking-widest uppercase text-neutral-500 hover:text-white transition-colors">← Back</button>
+</div>
+
+<!-- Step 3: Budget Range -->
+<div id="survey-step-3" class="step-panel hidden">
+	<h3 class="text-lg font-medium tracking-tight mb-6">Do you have a budget in mind?</h3>
+	<div class="flex flex-col gap-3">
+		<button type="button" class="budget-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200" data-value="under-25k">
+			<span class="text-sm font-medium text-neutral-300">Under $25,000</span>
+		</button>
+		<button type="button" class="budget-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200" data-value="25k-50k">
+			<span class="text-sm font-medium text-neutral-300">$25,000 – $50,000</span>
+		</button>
+		<button type="button" class="budget-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200" data-value="50k-100k">
+			<span class="text-sm font-medium text-neutral-300">$50,000 – $100,000</span>
+		</button>
+		<button type="button" class="budget-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200" data-value="100k-plus">
+			<span class="text-sm font-medium text-neutral-300">$100,000+</span>
+		</button>
+		<button type="button" class="budget-option w-full p-4 bg-neutral-800 border border-neutral-700 rounded text-left hover:border-neutral-500 transition-all duration-200" data-value="not-sure">
+			<span class="text-sm font-medium text-neutral-300">Not sure yet</span>
+		</button>
+	</div>
+	<button type="button" class="back-btn mt-6 text-xs font-medium tracking-widest uppercase text-neutral-500 hover:text-white transition-colors">← Back</button>
+</div>
+
+<!-- Step 4: Contact Info -->
+<div id="survey-step-4" class="step-panel hidden">
+	<h3 class="text-lg font-medium tracking-tight mb-6">Last step — how should we reach you?</h3>
+	<form id="survey-lead-form" class="flex flex-col gap-4">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<input type="text" name="name" placeholder="Full Name" required
+				class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 text-sm rounded focus:outline-none focus:border-neutral-500 transition-colors" />
+			<input type="tel" name="phone" placeholder="Phone Number" required
+				class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 text-sm rounded focus:outline-none focus:border-neutral-500 transition-colors" />
+		</div>
+		<input type="email" name="email" placeholder="Email Address" required
+			class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 text-sm rounded focus:outline-none focus:border-neutral-500 transition-colors" />
+		<textarea name="message" placeholder="Anything else we should know? (optional)" rows="3"
+			class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 text-sm rounded focus:outline-none focus:border-neutral-500 transition-colors resize-none"></textarea>
+		<button type="submit"
+			class="w-full py-4 bg-white text-black text-sm font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-colors rounded-full mt-2">
+			Get My Free Estimate
+		</button>
+	</form>
+	<button type="button" class="back-btn mt-6 text-xs font-medium tracking-widest uppercase text-neutral-500 hover:text-white transition-colors">← Back</button>
+</div>
+
+<!-- Success State -->
+<div id="survey-success" class="hidden text-center py-16">
+	<div class="w-16 h-16 rounded-full border border-neutral-700 flex items-center justify-center mx-auto mb-6">
+		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+	</div>
+	<h3 class="text-2xl font-semibold tracking-tight mb-3">You're all set.</h3>
+	<p class="text-neutral-400 font-light mb-1">We'll review your project details and get back to you within 24 hours.</p>
+	<p class="text-neutral-500 text-sm mt-4">Need to talk sooner? <a href="tel:8015550123" class="text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors">(801) 555-0123</a></p>
+</div>
+
+<style>
+	.step-panel {
+		animation: fadeInUp 0.3s ease-out;
+	}
+
+	.step-panel.hidden {
+		display: none;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(8px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const state = {
+			currentStep: 1,
+			service: '',
+			timeline: '',
+			budget: ''
+		};
+
+		const steps = {
+			1: document.getElementById('survey-step-1'),
+			2: document.getElementById('survey-step-2'),
+			3: document.getElementById('survey-step-3'),
+			4: document.getElementById('survey-step-4')
+		};
+
+		const progressBar = document.getElementById('survey-progress-bar');
+		const stepLabel = document.getElementById('survey-step-label');
+		const successEl = document.getElementById('survey-success');
+		const progressWrapper = document.getElementById('survey-progress-wrapper');
+
+		function goToStep(n: number) {
+			// Hide current
+			steps[state.currentStep]?.classList.add('hidden');
+
+			// Show target
+			state.currentStep = n;
+			steps[n]?.classList.remove('hidden');
+
+			// Update progress
+			const pct = n * 25;
+			if (progressBar) progressBar.style.width = `${pct}%`;
+			if (stepLabel) stepLabel.textContent = `Step ${n} of 4`;
+		}
+
+		// Step 1: Service selection
+		document.querySelectorAll('.service-option').forEach(btn => {
+			btn.addEventListener('click', () => {
+				state.service = (btn as HTMLElement).dataset.value || '';
+
+				// Visual feedback: briefly highlight selected card
+				btn.classList.add('border-white', 'bg-neutral-700');
+				setTimeout(() => goToStep(2), 300);
+			});
+		});
+
+		// Step 2: Timeline selection
+		document.querySelectorAll('.timeline-option').forEach(btn => {
+			btn.addEventListener('click', () => {
+				state.timeline = (btn as HTMLElement).dataset.value || '';
+				btn.classList.add('border-white', 'bg-neutral-700');
+				setTimeout(() => goToStep(3), 300);
+			});
+		});
+
+		// Step 3: Budget selection
+		document.querySelectorAll('.budget-option').forEach(btn => {
+			btn.addEventListener('click', () => {
+				state.budget = (btn as HTMLElement).dataset.value || '';
+				btn.classList.add('border-white', 'bg-neutral-700');
+				setTimeout(() => goToStep(4), 300);
+			});
+		});
+
+		// Back buttons
+		document.querySelectorAll('.back-btn').forEach(btn => {
+			btn.addEventListener('click', () => {
+				if (state.currentStep > 1) {
+					// Reset selected styles on previous step options
+					const currentPanel = steps[state.currentStep - 1];
+					currentPanel?.querySelectorAll('.border-white').forEach(el => {
+						el.classList.remove('border-white', 'bg-neutral-700');
+					});
+					goToStep(state.currentStep - 1);
+				}
+			});
+		});
+
+		// Step 4: Form submission
+		const form = document.getElementById('survey-lead-form') as HTMLFormElement;
+		form?.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const formData = new FormData(form);
+			const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+			if (btn) {
+				btn.textContent = 'Sending...';
+				btn.disabled = true;
+			}
+
+			const payload = {
+				service: state.service,
+				timeline: state.timeline,
+				budget: state.budget,
+				name: formData.get('name'),
+				phone: formData.get('phone'),
+				email: formData.get('email'),
+				message: formData.get('message'),
+				source: window.location.pathname,
+				timestamp: new Date().toISOString()
+			};
+
+			try {
+				// REPLACE: GHL webhook URL
+				await fetch('https://hooks.example.com/bowka-lead', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(payload)
+				});
+			} catch (err) {
+				// Silently continue — webhook failure shouldn't block UX
+				console.error('Form submission error:', err);
+			}
+
+			// Hide form + progress, show success
+			Object.values(steps).forEach(s => s?.classList.add('hidden'));
+			progressWrapper?.classList.add('hidden');
+			successEl?.classList.remove('hidden');
+		});
+	});
+</script>

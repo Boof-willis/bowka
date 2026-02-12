@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import StickyMobileCTA from '../../components/StickyMobileCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const citySchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "General Contractor in Provo, Utah",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { 
+		"@type": "City", 
+		"name": "Provo",
+		"containedInPlace": { "@type": "State", "name": "Utah" }
+	},
+	"description": "Licensed general contractor serving Provo, Utah. Basement finishing, remodeling, concrete work, additions, and new construction. B100 licensed and fully insured."
+};
+
+const services = [
+	{ title: "Basement Finishing", href: "/services/basement-finishing", icon: "sofa" },
+	{ title: "Kitchen Remodeling", href: "/services/kitchen-remodeling", icon: "utensils" },
+	{ title: "Bathroom Remodeling", href: "/services/bathroom-remodeling", icon: "bath" },
+	{ title: "Concrete Work", href: "/services/concrete", icon: "layers" },
+	{ title: "Home Additions", href: "/services/additions", icon: "plus-square" },
+	{ title: "New Construction", href: "/services/new-construction", icon: "hammer" }
+];
+---
+
+<BaseLayout
+	title="General Contractor Provo Utah | Bowka Construction — Licensed B100"
+	description="Trusted general contractor serving Provo, Utah. Basement finishing, kitchen and bathroom remodeling, concrete work, additions, and new construction. Free estimates."
+	keywords="general contractor Provo, basement finishing Provo, kitchen remodel Provo Utah, contractor near BYU, Provo remodeling"
+	schema={citySchema}
+>
+	<Header />
+
+	<!-- Hero -->
+	<section class="relative pt-40 pb-24 md:pt-48 md:pb-32 bg-black text-white overflow-hidden">
+		<!-- Background Overlay -->
+		<div class="absolute inset-0 z-0">
+			<img 
+				src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2670&auto=format&fit=crop" 
+				alt="Provo, Utah" 
+				class="w-full h-full object-cover opacity-20 scale-105"
+			/>
+			<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black"></div>
+		</div>
+
+		<div class="container mx-auto px-6 md:px-12 relative z-10">
+			<div class="max-w-4xl">
+				<div class="reveal">
+					<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Utah County</span>
+					<h1 class="text-4xl md:text-6xl font-semibold tracking-tight mb-8 leading-[1.1]">
+						General Contractor in<br class="hidden md:block" /> Provo, Utah.
+					</h1>
+				</div>
+				<p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-10 max-w-2xl reveal delay-100">
+					Serving Provo homeowners with quality basement finishing, remodeling, concrete work, and new construction. Licensed, insured, and locally trusted.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Breadcrumbs -->
+	<div class="bg-black border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12 py-6">
+			<Breadcrumbs items={[
+				{ label: "Areas We Serve", href: "/areas-we-serve" },
+				{ label: "Provo", href: "/areas-we-serve/provo" }
+			]} />
+		</div>
+	</div>
+
+	<!-- Content -->
+	<section class="py-24 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="max-w-4xl mx-auto prose prose-invert prose-neutral prose-lg prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-p:font-light prose-p:text-neutral-400 prose-li:text-neutral-400 prose-li:font-light reveal">
+				<h2>Why Provo Homeowners Choose Bowka Construction</h2>
+				<p>
+					Provo is home to BYU, the Provo River Trail, and thousands of families looking to improve their homes. Whether you're a young family in a starter home near the Joaquin neighborhood, a BYU professor in the Tree Streets, or a homeowner in the Canyon Road area looking to remodel before selling, Bowka Construction is here to help.
+				</p>
+				<p>
+					We specialize in basement finishing (perfect for homes near campus that need rental units), kitchen and bathroom remodeling, concrete driveways and patios, and home additions. We're licensed, insured, and based right here in Utah County.
+				</p>
+
+				<h2>Provo Neighborhoods We Serve</h2>
+				<ul>
+					<li><strong>Tree Streets</strong> — Historic homes with mature trees and character. We frequently remodel kitchens, bathrooms, and add mother-in-law suites here.</li>
+					<li><strong>Downtown Provo</strong> — Revitalized urban living near Center Street. We work on condos, townhomes, and older homes being updated.</li>
+					<li><strong>Joaquin Neighborhood</strong> — Family-friendly area near elementary schools. Basement finishing and additions are common projects.</li>
+					<li><strong>Canyon Road / East Bench</strong> — Upscale homes with mountain views. We handle high-end remodels and custom additions.</li>
+					<li><strong>BYU Campus Area</strong> — Student housing and rental properties. We finish basements and add bedrooms to maximize rental income.</li>
+				</ul>
+
+				<h2>Common Projects in Provo</h2>
+				<p>
+					<strong>Basement Apartments for Rental Income</strong> — Many Provo homeowners finish their basements as rental units for BYU students or young families. We handle egress windows, full kitchens, separate entrances, and all code requirements.
+				</p>
+				<p>
+					<strong>Kitchen and Bathroom Remodels</strong> — Older Provo homes often have outdated kitchens and bathrooms. We modernize these spaces with new cabinetry, countertops, tile, and fixtures.
+				</p>
+				<p>
+					<strong>Concrete Driveways and Patios</strong> — Provo's established neighborhoods often need driveway replacements or new patio installations. We pour concrete built to last.
+				</p>
+
+				<h2>Local Knowledge</h2>
+				<p>
+					Provo has specific zoning and building codes, especially for basement apartments and rental units. We navigate these requirements daily and ensure your project passes inspection on the first try.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services -->
+	<section class="py-24 md:py-32 bg-neutral-950 text-white border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="text-center mb-20 reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Our Expertise</span>
+				<h2 class="text-3xl md:text-5xl font-semibold tracking-tight">Services We Offer in Provo</h2>
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-900 border border-neutral-900 reveal delay-100">
+				{services.map((service) => (
+					<a href={service.href} class="bg-neutral-950 p-12 hover:bg-neutral-900 transition-colors duration-500 group">
+						<div class="w-12 h-12 rounded-full border border-neutral-800 flex items-center justify-center mb-8 group-hover:border-neutral-700 transition-colors">
+							{service.icon === 'sofa' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"></path><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"></path><path d="M4 18v2"></path><path d="M20 18v2"></path><path d="M12 4v9"></path></svg>}
+							{service.icon === 'utensils' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>}
+							{service.icon === 'bath' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" x2="8" y1="5" y2="7"/><line x1="2" x2="22" y1="12" y2="12"/><line x1="7" x2="7" y1="19" y2="21"/><line x1="17" x2="17" y1="19" y2="21"/></svg>}
+							{service.icon === 'layers' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>}
+							{service.icon === 'plus-square' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>}
+							{service.icon === 'hammer' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"></path><path d="m18 15 4-4"></path><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"></path></svg>}
+						</div>
+						<h3 class="text-lg font-semibold tracking-tight mb-4 group-hover:text-white transition-colors">{service.title}</h3>
+						<span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500 group-hover:text-white transition-colors flex items-center gap-2">
+							View Service
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+						</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Map -->
+	<section class="py-24 md:py-32 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="text-center mb-16 reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Location</span>
+				<h2 class="text-3xl md:text-5xl font-semibold tracking-tight">Serving All of Provo</h2>
+			</div>
+			<div class="w-full h-[500px] bg-neutral-900 rounded-sm overflow-hidden border border-neutral-800 reveal delay-100">
+				<!-- REPLACE: Google Maps embed URL centered on Provo -->
+				<iframe 
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24451.234567890123!2d-111.6585!3d40.2338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d9271e5c7e7e7%3A0x7e7e7e7e7e7e7e7e!2sProvo%2C%20UT!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" 
+					width="100%" 
+					height="100%" 
+					style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);" 
+					allowfullscreen="" 
+					loading="lazy"
+					title="Provo service area map"
+				></iframe>
+			</div>
+		</div>
+	</section>
+
+	<!-- Nearby Areas -->
+	<section class="py-24 bg-neutral-950 text-white border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="text-center reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-6">Explore</span>
+				<h3 class="text-xl font-semibold tracking-tight mb-10">We Also Serve Nearby Areas</h3>
+				<div class="flex flex-wrap justify-center gap-4">
+					<a href="/areas-we-serve/orem" class="px-6 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors">Orem</a>
+					<a href="/areas-we-serve" class="px-6 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors">Springville</a>
+					<a href="/areas-we-serve" class="px-6 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors">Spanish Fork</a>
+					<a href="/areas-we-serve" class="px-6 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors">Lehi</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-black text-white border-t border-neutral-900 text-center px-6">
+		<div class="container mx-auto max-w-3xl reveal">
+			<h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-8 leading-tight">Ready to Start Your<br>Provo Project?</h2>
+			<p class="text-neutral-400 font-light text-lg mb-12">Let's talk about what you're looking to accomplish. Free estimates for all Provo homeowners.</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="/#estimate" class="px-8 py-4 bg-white text-black text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-colors rounded-full">
+					Get Your Free Estimate
+				</a>
+				<a href="tel:8015550123" class="px-8 py-4 border border-neutral-800 text-white text-xs font-semibold uppercase tracking-widest hover:bg-neutral-900 transition-colors rounded-full">
+					Call (801) 555-0123
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+	<StickyMobileCTA />
+</BaseLayout>

@@ -1,0 +1,110 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Bathroom Remodeling",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { "@type": "State", "name": "Utah" },
+	"description": "Professional bathroom remodeling in Utah. Master baths, guest baths, and accessible bathroom renovations. Tile, vanities, fixtures, and full renovations."
+};
+---
+
+<ServiceLayout
+	title="Bathroom Remodeling Utah | Bowka Construction"
+	description="Transform your bathroom with Bowka Construction. Master bath remodels, tile showers, vanities, and accessible design. Serving Utah, Salt Lake, and Davis Counties."
+	keywords="bathroom remodel Utah, master bath renovation, tile shower Utah, bathroom contractor Lehi, accessible bathroom Utah"
+	heroImage="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/30104e3c-5eea-4b93-93e9-5313698a7156_1600w.webp"
+	heroImageAlt="Luxury bathroom remodel with tile shower"
+	h1="Bathroom Remodeling in Utah"
+	intro="Spa-like master baths. Functional guest bathrooms. Accessible design for aging in place. We remodel bathrooms that combine beauty and function."
+	includedItems={[
+		"Full bathroom design and layout",
+		"Tile selection and installation",
+		"Vanity and sink installation",
+		"Shower and tub surrounds",
+		"Plumbing fixture upgrades",
+		"Lighting and ventilation",
+		"Flooring (tile, LVP)",
+		"Accessibility features (grab bars, walk-in showers)",
+		"Waterproofing and moisture protection"
+	]}
+	processSteps={[
+		{
+			number: "1",
+			title: "Consultation & Design",
+			description: "We measure your bathroom, discuss your vision, and show you tile and fixture options. We'll create a design that fits your space and budget."
+		},
+		{
+			number: "2",
+			title: "Demo & Rough-In",
+			description: "We remove old fixtures and finishes. Plumbing and electrical are updated or relocated as needed."
+		},
+		{
+			number: "3",
+			title: "Tile & Fixtures",
+			description: "We waterproof, install tile, and set your new vanity, toilet, and shower fixtures."
+		},
+		{
+			number: "4",
+			title: "Final Details",
+			description: "Paint, trim, hardware, and final walkthrough. Your bathroom is ready."
+		}
+	]}
+	faqs={[
+		{
+			question: "How much does a bathroom remodel cost in Utah?",
+			answer: "A full bathroom remodel typically ranges from $15,000 to $40,000 depending on size and finishes. A standard 5x8 guest bath with new tile, vanity, and fixtures runs $15,000–$25,000. Master bath remodels with double vanities, large tile showers, and high-end finishes range from $30,000–$50,000+."
+		},
+		{
+			question: "How long does a bathroom remodel take?",
+			answer: "Most bathroom remodels take 2–4 weeks. Simple vanity and tile updates can be done in 1–2 weeks. Full gut renovations with layout changes take longer. We provide a clear timeline and keep you updated."
+		},
+		{
+			question: "Can you make my bathroom more accessible?",
+			answer: "Yes. We install walk-in showers (zero threshold or low curb), grab bars, comfort-height toilets, and accessible vanities. Many Utah families remodel bathrooms specifically for aging in place."
+		},
+		{
+			question: "What tile do you recommend for showers?",
+			answer: "We install ceramic, porcelain, and natural stone tile. For showers, we recommend porcelain for durability and water resistance. Large-format tiles (12x24 or larger) reduce grout lines and are easier to clean. We always use proper waterproofing membranes behind the tile."
+		}
+	]}
+	relatedServices={[
+		{ title: "Basement Finishing", href: "/services/basement-finishing", icon: "solar:sofa-linear" },
+		{ title: "Kitchen Remodeling", href: "/services/kitchen-remodeling", icon: "solar:chef-hat-heart-linear" },
+		{ title: "General Remodeling", href: "/services/remodeling", icon: "solar:layers-linear" }
+	]}
+	schema={serviceSchema}
+	breadcrumbs={[
+		{ label: "Services", href: "/services" },
+		{ label: "Bathroom Remodeling", href: "/services/bathroom-remodeling" }
+	]}
+>
+	<div class="content-prose">
+		<h2>Why Remodel Your Bathroom?</h2>
+		<p>
+			Bathrooms take a beating. Daily use, moisture, and wear lead to outdated finishes, cracked tile, and fixtures that don't work like they should. Whether you're modernizing a dated bathroom, creating a spa-like retreat, or making your bathroom safer and more accessible, we'll help you design and build it.
+		</p>
+
+		<h2>Common Bathroom Remodel Types</h2>
+		<ul>
+			<li><strong>Master Bath Remodel</strong> — Double vanities, large tile showers, soaking tubs, heated floors, and luxury finishes.</li>
+			<li><strong>Guest Bath Update</strong> — Refresh finishes, update fixtures, and improve storage without a full gut.</li>
+			<li><strong>Accessible / Aging-in-Place Bathroom</strong> — Walk-in showers, grab bars, and comfort-height fixtures for safety and independence.</li>
+			<li><strong>Basement Bathroom Addition</strong> — Add a full or half bath to your finished basement.</li>
+		</ul>
+
+		<h2>Tile Selection and Installation</h2>
+		<p>
+			Tile is the defining feature of most bathroom remodels. We install ceramic, porcelain, and natural stone tile in a variety of sizes and styles. Popular choices: large-format porcelain (12x24, 24x48), classic subway tile, mosaic accent tiles, and wood-look tile for floors.
+		</p>
+		<p>
+			We waterproof properly using Schluter systems or equivalent, ensuring your shower and tub surrounds are protected from moisture damage. We don't cut corners.
+		</p>
+	</div>
+</ServiceLayout>

@@ -1,0 +1,130 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "New Construction",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { "@type": "State", "name": "Utah" },
+	"description": "Custom home construction in Utah. Ground-up builds, full project management, and custom homes built to your specifications."
+};
+---
+
+<ServiceLayout
+	title="New Home Construction Utah | Bowka Construction — Custom Homes"
+	description="Build your dream home with Bowka Construction. Custom home construction and ground-up builds in Utah County, Salt Lake County, and Davis County. B100 licensed."
+	keywords="new home construction Utah, custom home builder Utah County, ground up construction, build custom home Salt Lake, home builder Lehi"
+	heroImage="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bab247f-35d9-400d-a82b-fd87cfe913d2_1600w.webp"
+	heroImageAlt="New custom home construction"
+	h1="New Home Construction in Utah"
+	intro="Build the home you've always wanted. We manage custom home projects from foundation to finish — handling design, permits, construction, and final details."
+	includedItems={[
+		"Full project management",
+		"Design collaboration and plan review",
+		"Site preparation and foundation",
+		"Framing, roofing, and exterior",
+		"MEP systems (mechanical, electrical, plumbing)",
+		"Interior finishing (drywall, flooring, trim)",
+		"Kitchen and bathroom installation",
+		"Final inspections and certificate of occupancy",
+		"Warranty and ongoing support"
+	]}
+	processSteps={[
+		{
+			number: "1",
+			title: "Initial Consultation",
+			description: "We discuss your vision, budget, lot details, and timeline. We'll review preliminary plans or create a design from scratch."
+		},
+		{
+			number: "2",
+			title: "Design & Pre-Construction",
+			description: "We finalize plans, submit for permits, secure bids from subcontractors, and create a detailed timeline and budget."
+		},
+		{
+			number: "3",
+			title: "Construction",
+			description: "We build your home from the ground up, managing every phase and keeping you informed with regular updates and walkthroughs."
+		},
+		{
+			number: "4",
+			title: "Final Walkthrough & Move-In",
+			description: "We complete final inspections, obtain your certificate of occupancy, and hand you the keys to your new home."
+		}
+	]}
+	faqs={[
+		{
+			question: "How much does it cost to build a custom home in Utah?",
+			answer: "Custom home construction costs vary widely based on size, location, and finishes. As a general estimate, expect $200–$350+ per square foot for a complete build. A 2,500 sq ft custom home ranges from $500,000 to $875,000+. We provide detailed estimates based on your specific plans and goals."
+		},
+		{
+			question: "How long does it take to build a custom home?",
+			answer: "Most custom homes take 9–18 months from permit submission to move-in. Timeline depends on home size, complexity, weather, and material availability. We provide a realistic schedule and keep you updated throughout."
+		},
+		{
+			question: "Do I need to own a lot before starting?",
+			answer: "Yes. You'll need to own the land or have a lot under contract before we can begin design and permitting. We can recommend reputable land agents if you're still searching."
+		},
+		{
+			question: "Can I use my own architect or plans?",
+			answer: "Absolutely. If you already have plans, we'll review them, provide a bid, and manage the construction. If you need design help, we can connect you with trusted architects and designers."
+		},
+		{
+			question: "What's included in your new construction service?",
+			answer: "We manage the entire project: permitting, site work, foundation, framing, roofing, siding, windows, MEP systems, insulation, drywall, flooring, trim, cabinets, countertops, fixtures, and final finishes. You'll work with a single point of contact (Brady) throughout the process."
+		}
+	]}
+	relatedServices={[
+		{ title: "Home Additions", href: "/services/additions", icon: "solar:home-add-linear" },
+		{ title: "Concrete", href: "/services/concrete", icon: "solar:layers-linear" },
+		{ title: "Remodeling", href: "/services/remodeling", icon: "solar:layers-linear" }
+	]}
+	schema={serviceSchema}
+	breadcrumbs={[
+		{ label: "Services", href: "/services" },
+		{ label: "New Construction", href: "/services/new-construction" }
+	]}
+>
+	<div class="content-prose">
+		<h2>Why Build Custom?</h2>
+		<p>
+			A custom home lets you design every detail to fit your family's needs. You choose the layout, the finishes, the lot, and the location. You're not compromising on someone else's floor plan or settling for a spec home that's almost right. If you have a vision and a lot, we'll help you build it.
+		</p>
+
+		<h2>Our Role as Your General Contractor</h2>
+		<p>
+			Building a home involves dozens of trades, hundreds of decisions, and constant coordination. As your general contractor, we manage the entire process. We hire and oversee subcontractors, order materials, schedule inspections, and ensure every phase meets our quality standards. You'll have a single point of contact (Brady) who keeps you informed and makes the process as smooth as possible.
+		</p>
+
+		<h2>Design & Planning</h2>
+		<p>
+			If you already have plans, we'll review them for constructibility and provide a detailed bid. If you're starting from scratch, we work with architects and designers to create plans that fit your vision and budget. We'll guide you through decisions on layout, finishes, and features, helping you prioritize what matters most.
+		</p>
+
+		<h2>What to Expect</h2>
+		<p>
+			<strong>Pre-Construction (2–4 months):</strong> Design, permitting, and subcontractor bids. We finalize plans and establish a budget and timeline.
+		</p>
+		<p>
+			<strong>Foundation & Framing (2–3 months):</strong> Site prep, foundation, framing, and roof. Your home starts taking shape.
+		</p>
+		<p>
+			<strong>MEP & Exterior (2–3 months):</strong> Plumbing, electrical, HVAC, siding, windows, and exterior finishes.
+		</p>
+		<p>
+			<strong>Interior Finishing (3–4 months):</strong> Drywall, flooring, trim, cabinets, countertops, and fixtures. This is where your home comes to life.
+		</p>
+		<p>
+			<strong>Final Inspections & Move-In:</strong> We complete punch list items, pass final inspections, and hand you the keys.
+		</p>
+
+		<h2>Where We Build</h2>
+		<p>
+			We build custom homes throughout Utah County, Salt Lake County, and Davis County. Popular build locations include: Lehi, Saratoga Springs, Eagle Mountain, Alpine, Highland, Draper, Herriman, and Farmington. If you have a lot in our service area, we'd love to build your home.
+		</p>
+	</div>
+</ServiceLayout>

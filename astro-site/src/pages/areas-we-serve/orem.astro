@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import StickyMobileCTA from '../../components/StickyMobileCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const citySchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "General Contractor in Orem, Utah",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { 
+		"@type": "City", 
+		"name": "Orem",
+		"containedInPlace": { "@type": "State", "name": "Utah" }
+	},
+	"description": "Licensed general contractor serving Orem, Utah. Basement finishing, kitchen and bathroom remodeling, concrete work, and home additions. B100 licensed."
+};
+
+const services = [
+	{ title: "Basement Finishing", href: "/services/basement-finishing", icon: "sofa" },
+	{ title: "Kitchen Remodeling", href: "/services/kitchen-remodeling", icon: "utensils" },
+	{ title: "Bathroom Remodeling", href: "/services/bathroom-remodeling", icon: "bath" },
+	{ title: "Concrete Work", href: "/services/concrete", icon: "layers" },
+	{ title: "Home Additions", href: "/services/additions", icon: "plus-square" },
+	{ title: "Whole-Home Renovation", href: "/services/remodeling", icon: "home" }
+];
+---
+
+<BaseLayout
+	title="General Contractor Orem Utah | Bowka Construction — Basement Finishing & Remodeling"
+	description="Trusted general contractor in Orem, Utah. Basement finishing, kitchen and bathroom remodeling, concrete work, and home additions. Licensed B100 contractor serving all Orem neighborhoods."
+	keywords="general contractor Orem, basement finishing Orem Utah, kitchen remodel Orem, contractor near UVU, Orem remodeling"
+	schema={citySchema}
+>
+	<Header />
+
+	<!-- Hero -->
+	<section class="relative pt-40 pb-24 md:pt-48 md:pb-32 bg-black text-white overflow-hidden">
+		<!-- Background Overlay -->
+		<div class="absolute inset-0 z-0">
+			<img 
+				src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+				alt="Orem, Utah" 
+				class="w-full h-full object-cover opacity-20 scale-105"
+			/>
+			<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black"></div>
+		</div>
+
+		<div class="container mx-auto px-6 md:px-12 relative z-10">
+			<div class="max-w-4xl">
+				<div class="reveal">
+					<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Utah County</span>
+					<h1 class="text-4xl md:text-6xl font-semibold tracking-tight mb-8 leading-[1.1]">
+						General Contractor in<br class="hidden md:block" /> Orem, Utah.
+					</h1>
+				</div>
+				<p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-10 max-w-2xl reveal delay-100">
+					Quality basement finishing, kitchen and bathroom remodeling, and home additions for Orem families. Licensed, insured, and locally trusted.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Breadcrumbs -->
+	<div class="bg-black border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12 py-6">
+			<Breadcrumbs items={[
+				{ label: "Areas We Serve", href: "/areas-we-serve" },
+				{ label: "Orem", href: "/areas-we-serve/orem" }
+			]} />
+		</div>
+	</div>
+
+	<!-- Content -->
+	<section class="py-24 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="max-w-4xl mx-auto prose prose-invert prose-neutral prose-lg prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-p:font-light prose-p:text-neutral-400 prose-li:text-neutral-400 prose-li:font-light reveal">
+				<h2>Serving Orem Homeowners</h2>
+				<p>
+					Orem is a family-friendly city at the base of Mount Timpanogos with parks, schools, and a strong sense of community. Whether you live in the established neighborhoods near Geneva Road, the newer developments in the Timpanogos area, or anywhere in between, Bowka Construction is here to help with your construction and remodeling needs.
+				</p>
+				<p>
+					We specialize in basement finishing (especially popular in Orem's older homes with unfinished basements), kitchen and bathroom remodeling, concrete work, and home additions. We're licensed, insured, and understand Orem's building codes and permit processes.
+				</p>
+
+				<h2>Orem Neighborhoods We Serve</h2>
+				<ul>
+					<li><strong>Timpanogos Area</strong> — Newer homes built in the 1990s–2000s, many with unfinished basements. We frequently finish basements and add mother-in-law suites here.</li>
+					<li><strong>Geneva Road Corridor</strong> — Established neighborhoods with mature trees and mid-century homes. We update kitchens, bathrooms, and replace driveways.</li>
+					<li><strong>Orchard Neighborhood</strong> — Family-oriented area near elementary schools and parks. Basement finishing and kitchen remodels are common projects.</li>
+					<li><strong>East Bench / Cascade</strong> — Hillside homes with valley views. We handle remodels, additions, and custom work.</li>
+				</ul>
+
+				<h2>Why Orem Families Choose Bowka</h2>
+				<p>
+					Orem homeowners value quality, transparency, and local expertise. We've worked on dozens of projects in Orem — from basement apartments to full kitchen renovations — and we understand what matters to Orem families: staying on schedule, communicating clearly, and finishing the job right.
+				</p>
+				<p>
+					Many of our Orem clients come to us looking to finish a basement to add rental income or accommodate growing families. We handle egress windows, code-compliant bedrooms and bathrooms, and permit acquisition — everything you need for a legal, safe basement finish.
+				</p>
+
+				<h2>Local Expertise</h2>
+				<p>
+					We work with Orem's building department regularly and understand local requirements. Whether you need a permit for a basement finish, a kitchen remodel, or a concrete driveway, we handle the paperwork and pass inspections on the first try.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services -->
+	<section class="py-24 md:py-32 bg-neutral-950 text-white border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="text-center mb-20 reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Our Expertise</span>
+				<h2 class="text-3xl md:text-5xl font-semibold tracking-tight">Services We Offer in Orem</h2>
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-900 border border-neutral-900 reveal delay-100">
+				{services.map((service) => (
+					<a href={service.href} class="bg-neutral-950 p-12 hover:bg-neutral-900 transition-colors duration-500 group">
+						<div class="w-12 h-12 rounded-full border border-neutral-800 flex items-center justify-center mb-8 group-hover:border-neutral-700 transition-colors">
+							{service.icon === 'sofa' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"></path><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"></path><path d="M4 18v2"></path><path d="M20 18v2"></path><path d="M12 4v9"></path></svg>}
+							{service.icon === 'utensils' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>}
+							{service.icon === 'bath' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" x2="8" y1="5" y2="7"/><line x1="2" x2="22" y1="12" y2="12"/><line x1="7" x2="7" y1="19" y2="21"/><line x1="17" x2="17" y1="19" y2="21"/></svg>}
+							{service.icon === 'layers' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>}
+							{service.icon === 'plus-square' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>}
+							{service.icon === 'home' && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500 group-hover:text-white transition-colors"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>}
+						</div>
+						<h3 class="text-lg font-semibold tracking-tight mb-4 group-hover:text-white transition-colors">{service.title}</h3>
+						<span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500 group-hover:text-white transition-colors flex items-center gap-2">
+							View Service
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+						</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Map -->
+	<section class="py-24 md:py-32 bg-black text-white">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="text-center mb-16 reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Location</span>
+				<h2 class="text-3xl md:text-5xl font-semibold tracking-tight">Serving All of Orem</h2>
+			</div>
+			<div class="w-full h-[500px] bg-neutral-900 rounded-sm overflow-hidden border border-neutral-800 reveal delay-100">
+				<!-- REPLACE: Google Maps embed URL centered on Orem -->
+				<iframe 
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24451.234567890123!2d-111.6947!3d40.2969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d972e1c4e3e3e%3A0x1e1e1e1e1e1e1e1e!2sOrem%2C%20UT!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" 
+					width="100%" 
+					height="100%" 
+					style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);" 
+					allowfullscreen="" 
+					loading="lazy"
+					title="Orem service area map"
+				></iframe>
+			</div>
+		</div>
+	</section>
+
+	<!-- Nearby Areas -->
+	<section class="py-24 bg-neutral-950 text-white border-y border-neutral-900">
+		<div class="container mx-auto px-6 md:px-12">
+			<div class="text-center reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-6">Explore</span>
+				<h3 class="text-xl font-semibold tracking-tight mb-10">We Also Serve Nearby Areas</h3>
+				<div class="flex flex-wrap justify-center gap-4">
+					<a href="/areas-we-serve/provo" class="px-6 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors">Provo</a>
+					<a href="/areas-we-serve" class="px-6 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors">Lindon</a>
+					<a href="/areas-we-serve" class="px-6 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors">Pleasant Grove</a>
+					<a href="/areas-we-serve" class="px-6 py-2 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors">Lehi</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="py-24 bg-black text-white border-t border-neutral-900 text-center px-6">
+		<div class="container mx-auto max-w-3xl reveal">
+			<h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-8 leading-tight">Ready to Start Your<br>Orem Project?</h2>
+			<p class="text-neutral-400 font-light text-lg mb-12">Let's talk about what you're looking to accomplish. Free estimates for all Orem homeowners.</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="/#estimate" class="px-8 py-4 bg-white text-black text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-colors rounded-full">
+					Get Your Free Estimate
+				</a>
+				<a href="tel:8015550123" class="px-8 py-4 border border-neutral-800 text-white text-xs font-semibold uppercase tracking-widest hover:bg-neutral-900 transition-colors rounded-full">
+					Call (801) 555-0123
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+	<StickyMobileCTA />
+</BaseLayout>

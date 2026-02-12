@@ -1,0 +1,121 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Home Additions",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { "@type": "State", "name": "Utah" },
+	"description": "Home addition and expansion services in Utah. Mother-in-law suites, room additions, garages, and second stories."
+};
+---
+
+<ServiceLayout
+	title="Home Additions Utah | Bowka Construction — Room Additions & Expansions"
+	description="Expand your home with a professional addition. Mother-in-law suites, room additions, garages, and more. Serving Utah County, Salt Lake County, and Davis County."
+	keywords="home addition Utah, room addition Salt Lake, mother-in-law suite Lehi, home expansion contractor, garage addition Utah"
+	heroImage="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg"
+	heroImageAlt="Home addition with new room expansion"
+	h1="Home Additions in Utah"
+	intro="Need more space but don't want to move? We design and build additions that blend seamlessly with your existing home — from mother-in-law suites to garage expansions."
+	includedItems={[
+		"Full design and architectural planning",
+		"Foundation and framing",
+		"Roofing and exterior matching",
+		"Electrical and plumbing integration",
+		"HVAC extensions",
+		"Interior finishing (drywall, flooring, trim)",
+		"Permit acquisition and inspections",
+		"Seamless integration with existing structure"
+	]}
+	processSteps={[
+		{
+			number: "1",
+			title: "Consultation & Design",
+			description: "We discuss your needs, evaluate your property, and create preliminary plans. We'll explore layout options and establish a budget."
+		},
+		{
+			number: "2",
+			title: "Plans & Permits",
+			description: "We finalize architectural drawings, submit for permits, and handle all approvals. Most additions require full permitting through your city or county."
+		},
+		{
+			number: "3",
+			title: "Foundation & Framing",
+			description: "We pour the foundation, frame the addition, and integrate it with your existing structure. Roof tie-ins and exterior matching happen here."
+		},
+		{
+			number: "4",
+			title: "Finish & Final Inspection",
+			description: "We complete interior finishing, pass final inspections, and walk you through your new space."
+		}
+	]}
+	faqs={[
+		{
+			question: "How much does a home addition cost in Utah?",
+			answer: "Home additions typically cost $150–$300+ per square foot depending on complexity and finishes. A 400 sq ft mother-in-law suite addition ranges from $60,000 to $120,000. Factors that affect cost: foundation type, roof complexity, plumbing/electrical needs, and finish level."
+		},
+		{
+			question: "Do I need a permit for a home addition?",
+			answer: "Yes. All home additions in Utah require building permits, and many require zoning approval. We handle all permit applications, plan submissions, and inspections."
+		},
+		{
+			question: "How long does a home addition take?",
+			answer: "Most home additions take 3–6 months from permit submission to final inspection. Timeline depends on size, complexity, and permit approval time. We provide a realistic schedule and keep you updated."
+		},
+		{
+			question: "Can you match my existing home's exterior?",
+			answer: "Yes. We work hard to match siding, brick, stucco, roofing, and trim so the addition looks like it's always been there. Seamless integration is a priority."
+		},
+		{
+			question: "What's a mother-in-law suite?",
+			answer: "A mother-in-law suite (also called an ADU or accessory dwelling unit) is a self-contained living space with a bedroom, bathroom, and often a kitchenette. Many Utah families build these for aging parents, adult children, or rental income."
+		}
+	]}
+	testimonial={{
+		quote: "Brady and his crew added a mother-in-law suite to our home. The attention to detail was outstanding. It looks like it was always part of the house.",
+		author: "Linda K.",
+		location: "Sandy, UT",
+		service: "Additions"
+	}}
+	relatedServices={[
+		{ title: "Basement Finishing", href: "/services/basement-finishing", icon: "solar:sofa-linear" },
+		{ title: "Remodeling", href: "/services/remodeling", icon: "solar:layers-linear" },
+		{ title: "New Construction", href: "/services/new-construction", icon: "solar:city-linear" }
+	]}
+	schema={serviceSchema}
+	breadcrumbs={[
+		{ label: "Services", href: "/services" },
+		{ label: "Additions", href: "/services/additions" }
+	]}
+>
+	<div class="content-prose">
+		<h2>Why Add On Instead of Moving?</h2>
+		<p>
+			Moving is expensive, disruptive, and uncertain. If you love your neighborhood, your neighbors, and your location, a home addition lets you stay while gaining the space you need. Common reasons Utah families add on: aging parents moving in, growing family needing more bedrooms, desire for a dedicated home office, or rental income potential.
+		</p>
+
+		<h2>Types of Home Additions</h2>
+		<ul>
+			<li><strong>Mother-in-Law Suite / ADU</strong> — Self-contained living space with bedroom, bathroom, and kitchenette. Often includes a separate entrance.</li>
+			<li><strong>Room Addition</strong> — Extra bedroom, office, playroom, or family room added to the main floor or second story.</li>
+			<li><strong>Garage Addition or Expansion</strong> — Convert a single-car garage to a two-car, or add a detached garage.</li>
+			<li><strong>Sunroom or Covered Patio Enclosure</strong> — Expand your indoor living space by enclosing an existing patio or deck.</li>
+		</ul>
+
+		<h2>Planning Your Addition</h2>
+		<p>
+			Every addition starts with careful planning. We evaluate your property's setbacks, easements, and zoning restrictions. We discuss how the addition will integrate with your existing home structurally and aesthetically. We create plans that meet code, pass inspections, and look great.
+		</p>
+
+		<h2>Permitting and Approval</h2>
+		<p>
+			Home additions require architectural plans and building permits. Depending on your city or county, the process can take 2–6 weeks. We handle all plan submissions, engineering (if required), and inspection scheduling. You don't have to deal with the paperwork.
+		</p>
+	</div>
+</ServiceLayout>

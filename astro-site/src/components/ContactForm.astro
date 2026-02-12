@@ -1,0 +1,180 @@
+---
+interface Props {
+	webhookUrl?: string;
+	showContactInfo?: boolean;
+}
+
+const { 
+	webhookUrl = 'https://hooks.example.com/bowka-lead',
+	showContactInfo = true 
+} = Astro.props;
+---
+
+<div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+	<!-- Left Column - Contact Info -->
+	{showContactInfo && (
+		<div class="lg:w-5/12 text-white">
+			<span class="text-amber font-sans font-semibold tracking-wider text-xs uppercase block mb-3">Start Your Project</span>
+			<h2 class="text-3xl sm:text-4xl font-sans font-semibold tracking-tight mb-6">Ready for a Free Estimate?</h2>
+			<p class="text-gray-400 mb-8 leading-relaxed">
+				Fill out the form to tell us about your project. We'll review your details and get back to you within 24 hours to schedule a consultation.
+			</p>
+
+			<div class="space-y-6 mb-10">
+				<a href="tel:8015550123" class="flex items-center gap-4 group">
+					<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-white transition-colors">
+						<iconify-icon icon="solar:phone-calling-linear" width="24"></iconify-icon>
+					</div>
+					<div>
+						<p class="text-xs text-gray-400 uppercase tracking-wider">Call Us</p>
+						<p class="text-lg font-medium">
+							<!-- REPLACE: Phone number → (801) XXX-XXXX -->
+							(801) 555-0123
+						</p>
+					</div>
+				</a>
+				<div class="flex items-center gap-4">
+					<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-amber">
+						<iconify-icon icon="solar:clock-circle-linear" width="24"></iconify-icon>
+					</div>
+					<div>
+						<p class="text-xs text-gray-400 uppercase tracking-wider">Business Hours</p>
+						<p class="text-lg font-medium">Mon-Fri: 7am - 6pm</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	)}
+
+	<!-- Form Column -->
+	<div class:list={[showContactInfo ? 'lg:w-7/12' : 'w-full max-w-2xl mx-auto']}>
+		<form id="leadForm" class="bg-white rounded-lg p-6 sm:p-8 shadow-2xl space-y-4" data-webhook-url={webhookUrl}>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div>
+					<label for="name" class="block text-sm font-medium text-charcoal mb-1">Full Name *</label>
+					<input type="text" id="name" name="name" required class="custom-input" placeholder="John Doe">
+				</div>
+				<div>
+					<label for="phone" class="block text-sm font-medium text-charcoal mb-1">Phone Number *</label>
+					<input type="tel" id="phone" name="phone" required class="custom-input" placeholder="(801) 555-0123">
+				</div>
+			</div>
+			
+			<div>
+				<label for="email" class="block text-sm font-medium text-charcoal mb-1">Email Address *</label>
+				<input type="email" id="email" name="email" required class="custom-input" placeholder="john@example.com">
+			</div>
+
+			<div>
+				<label for="service" class="block text-sm font-medium text-charcoal mb-1">Service Interested In</label>
+				<div class="custom-select-wrapper">
+					<select id="service" name="service" class="custom-input cursor-pointer">
+						<option value="" disabled selected>Select a service...</option>
+						<option value="Basement Finishing">Basement Finishing</option>
+						<option value="Kitchen Remodeling">Kitchen Remodeling</option>
+						<option value="Bathroom Remodeling">Bathroom Remodeling</option>
+						<option value="Remodeling">General Remodeling</option>
+						<option value="Additions">Additions</option>
+						<option value="Concrete">Concrete</option>
+						<option value="New Construction">New Construction</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
+
+			<div>
+				<label for="message" class="block text-sm font-medium text-charcoal mb-1">Project Details</label>
+				<textarea id="message" name="message" rows="4" class="custom-input resize-none" placeholder="Briefly describe your project..."></textarea>
+			</div>
+
+			<button type="submit" class="w-full bg-amber text-white font-semibold py-3.5 px-6 rounded-md hover:bg-amber-dark transition-colors shadow-lg flex justify-center items-center gap-2">
+				<span>Request My Free Estimate</span>
+				<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+			</button>
+			
+			<p class="text-xs text-center text-slate mt-4">We respect your privacy. Your information is never shared.</p>
+		</form>
+		
+		<!-- Success Message (Hidden by default) -->
+		<div id="formSuccess" class="hidden bg-white rounded-lg p-8 shadow-2xl text-center flex-col justify-center items-center">
+			<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-4 mx-auto">
+				<iconify-icon icon="solar:check-circle-bold" width="32"></iconify-icon>
+			</div>
+			<h3 class="text-2xl font-sans font-bold text-charcoal mb-2">Request Received!</h3>
+			<p class="text-slate" id="successName">Thanks for contacting Bowka Construction. We'll be in touch within 24 hours.</p>
+			<button type="button" id="resetFormBtn" class="mt-6 text-amber font-medium text-sm hover:underline">Send another request</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	// Form Handling with Webhook
+	document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
+		e.preventDefault();
+		const form = e.target;
+		const btn = form.querySelector('button[type="submit"]');
+		if (!btn) return;
+
+		btn.innerHTML = '<iconify-icon icon="line-md:loading-loop" width="24"></iconify-icon> Sending...';
+		btn.disabled = true;
+
+		try {
+			const formData = new FormData(form);
+			const webhookUrl = form.dataset.webhookUrl || 'https://hooks.example.com/bowka-lead';
+			
+			const payload = {
+				name: formData.get('name'),
+				phone: formData.get('phone'),
+				email: formData.get('email'),
+				service: formData.get('service'),
+				message: formData.get('message'),
+				source: window.location.pathname,
+				timestamp: new Date().toISOString()
+			};
+
+			// <!-- REPLACE: GHL webhook URL → https://hooks.example.com/bowka-lead -->
+			await fetch(webhookUrl, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload)
+			});
+
+			// Show success message
+			const successName = document.getElementById('successName');
+			if (successName) {
+				successName.textContent = `Thanks, ${payload.name}! We'll be in touch within 24 hours.`;
+			}
+			
+			form.classList.add('hidden');
+			const success = document.getElementById('formSuccess');
+			if (success) {
+				success.classList.remove('hidden');
+				success.classList.add('flex');
+			}
+		} catch (error) {
+			console.error('Form submission error:', error);
+			btn.innerHTML = '<span>Request My Free Estimate</span><iconify-icon icon="solar:arrow-right-linear"></iconify-icon>';
+			btn.disabled = false;
+			alert('There was an error submitting your request. Please try again or call us directly.');
+		}
+	});
+
+	// Reset form
+	document.getElementById('resetFormBtn')?.addEventListener('click', function() {
+		const form = document.getElementById('leadForm');
+		const success = document.getElementById('formSuccess');
+		if (form) {
+			form.reset();
+			form.classList.remove('hidden');
+			const btn = form.querySelector('button[type="submit"]');
+			if (btn) {
+				btn.innerHTML = '<span>Request My Free Estimate</span><iconify-icon icon="solar:arrow-right-linear"></iconify-icon>';
+				btn.disabled = false;
+			}
+		}
+		if (success) {
+			success.classList.add('hidden');
+			success.classList.remove('flex');
+		}
+	});
+</script>

@@ -1,0 +1,142 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Kitchen Remodeling",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { "@type": "State", "name": "Utah" },
+	"description": "Professional kitchen remodeling and renovation services in Utah. Custom cabinetry, countertops, islands, and open-concept layouts. Licensed B100 contractor."
+};
+---
+
+<ServiceLayout
+	title="Kitchen Remodeling Utah | Bowka Construction — Custom Kitchens"
+	description="Transform your kitchen with Bowka Construction. Custom cabinetry, islands, countertops, and open-concept layouts. Serving Utah County, Salt Lake County, and Davis County. Free estimates."
+	keywords="kitchen remodel Utah, kitchen renovation Utah County, custom kitchen Salt Lake, kitchen contractor Draper, kitchen cabinets Utah"
+	heroImage="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+	heroImageAlt="Modern kitchen remodel with white cabinets and island"
+	h1="Kitchen Remodeling in Utah"
+	intro="Modernize the heart of your home. From layout redesign to custom cabinetry, we transform outdated kitchens into beautiful, functional spaces your family will love."
+	includedItems={[
+		"Full kitchen design and layout consultation",
+		"Cabinet selection or custom cabinetry",
+		"Countertop installation (quartz, granite, etc.)",
+		"Flooring removal and installation",
+		"Backsplash tile work",
+		"Electrical and lighting upgrades",
+		"Plumbing for sinks and appliances",
+		"Island or peninsula construction",
+		"Hardware and fixture installation"
+	]}
+	processSteps={[
+		{
+			number: "1",
+			title: "Design Consultation",
+			description: "We discuss your style, needs, budget, and timeline. We'll review layout options, show you material samples, and help you make decisions."
+		},
+		{
+			number: "2",
+			title: "Detailed Estimate",
+			description: "You'll receive a complete breakdown of labor and materials. We walk through every line item so there are no surprises."
+		},
+		{
+			number: "3",
+			title: "Demo & Construction",
+			description: "We remove old cabinets and finishes, update plumbing and electrical, and install new cabinetry, countertops, and flooring."
+		},
+		{
+			number: "4",
+			title: "Final Details",
+			description: "Backsplash, trim, hardware, and final walkthrough. Your kitchen is move-in ready."
+		}
+	]}
+	faqs={[
+		{
+			question: "How much does a kitchen remodel cost in Utah?",
+			answer: "Kitchen remodels typically range from $30,000 to $80,000+ depending on size and scope. A mid-range remodel with new cabinets, countertops, appliances, and flooring in a standard 10x12 kitchen usually falls in the $40,000–$60,000 range. Custom cabinetry, high-end appliances, and layout changes increase cost."
+		},
+		{
+			question: "How long does a kitchen remodel take?",
+			answer: "Most kitchen remodels take 4–8 weeks. Simple cabinet and countertop replacements can be done in 2–3 weeks. Full gut renovations with layout changes, plumbing relocation, and custom work take longer. We provide a realistic timeline and stick to it."
+		},
+		{
+			question: "Can I stay in my home during the remodel?",
+			answer: "Yes, but it requires planning. Your kitchen will be out of commission during construction. Many families set up a temporary kitchen in another room with a microwave, mini fridge, and toaster oven. We work efficiently to minimize disruption and keep the rest of your home as clean as possible."
+		},
+		{
+			question: "Do you help with design and material selection?",
+			answer: "Absolutely. We guide you through cabinet styles, countertop materials, backsplash tile, flooring, and hardware. If you prefer to work with a designer, we collaborate seamlessly."
+		},
+		{
+			question: "Can you open up my kitchen to the living or dining room?",
+			answer: "Yes. Open-concept layouts are one of the most requested kitchen updates. We evaluate your home's structure, handle any load-bearing wall modifications, and create the open flow you're looking for."
+		}
+	]}
+	testimonial={{
+		quote: "We got three bids for our kitchen remodel and went with Bowka. Best decision we made — came in on budget and it looks amazing. Brady was responsive and patient with all our questions.",
+		author: "Rachel T.",
+		location: "Draper, UT",
+		service: "Kitchen Remodeling"
+	}}
+	relatedServices={[
+		{ title: "Bathroom Remodeling", href: "/services/bathroom-remodeling", icon: "solar:bath-linear" },
+		{ title: "General Remodeling", href: "/services/remodeling", icon: "solar:layers-linear" },
+		{ title: "Home Additions", href: "/services/additions", icon: "solar:home-add-linear" }
+	]}
+	schema={serviceSchema}
+	breadcrumbs={[
+		{ label: "Services", href: "/services" },
+		{ label: "Kitchen Remodeling", href: "/services/kitchen-remodeling" }
+	]}
+>
+	<div class="content-prose">
+		<h2>Why Remodel Your Kitchen?</h2>
+		<p>
+			Your kitchen is where your family gathers — it's the heart of your home. If your kitchen feels cramped, outdated, or inefficient, a remodel can transform how you cook, entertain, and live.
+		</p>
+		<p>
+			Common reasons Utah homeowners remodel their kitchens: outdated 1990s oak cabinets and laminate countertops, lack of storage or counter space, poor layout that doesn't work for your family, desire for an open-concept connection to living areas, and preparing to sell (kitchen remodels offer strong ROI).
+		</p>
+
+		<h2>Our Kitchen Remodeling Approach</h2>
+		<p>
+			We start with your goals. Do you want a complete overhaul or a targeted refresh? Are you focused on aesthetics, functionality, or both? We help you prioritize and make smart decisions that fit your budget.
+		</p>
+		<p>
+			We work with trusted cabinet suppliers, countertop fabricators, and tile installers. You'll have access to a wide range of styles and price points, from budget-friendly stock cabinets to custom builds.
+		</p>
+
+		<h2>Popular Kitchen Upgrades</h2>
+		<ul>
+			<li><strong>White Shaker Cabinets</strong> — Timeless, clean, and versatile. Pairs well with nearly any countertop and backsplash.</li>
+			<li><strong>Quartz Countertops</strong> — Durable, low-maintenance, and available in hundreds of colors and patterns. We install Cambria, Silestone, and other premium brands.</li>
+			<li><strong>Large Islands</strong> — A well-designed island adds workspace, storage, and seating. We build custom islands tailored to your kitchen's dimensions.</li>
+			<li><strong>Open Shelving</strong> — Floating shelves or open upper cabinets create a modern, airy feel.</li>
+			<li><strong>Subway Tile Backsplash</strong> — Classic and affordable. We also install mosaic, glass, and natural stone options.</li>
+			<li><strong>Undermount Sinks & Quality Faucets</strong> — Clean lines and easy maintenance.</li>
+		</ul>
+
+		<h2>What to Expect During Your Kitchen Remodel</h2>
+		<p>
+			<strong>Week 1:</strong> Demo. We remove old cabinets, countertops, and flooring. We protect the rest of your home with plastic barriers and floor protection.
+		</p>
+		<p>
+			<strong>Weeks 2-3:</strong> Plumbing, electrical, and structural work. If you're moving appliances or adding outlets, this happens now.
+		</p>
+		<p>
+			<strong>Weeks 4-5:</strong> Cabinet installation, countertop template and install, and flooring installation.
+		</p>
+		<p>
+			<strong>Weeks 6-7:</strong> Backsplash, paint, trim, and hardware. Final plumbing and electrical fixtures go in.
+		</p>
+		<p>
+			<strong>Week 8:</strong> Final walkthrough and punch list. You're ready to cook.
+		</p>
+	</div>
+</ServiceLayout>

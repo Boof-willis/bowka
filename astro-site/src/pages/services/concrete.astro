@@ -1,0 +1,122 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Concrete Work",
+	"provider": { 
+		"@type": "GeneralContractor", 
+		"name": "Bowka Construction",
+		"telephone": "+1-801-555-0123"
+	},
+	"areaServed": { "@type": "State", "name": "Utah" },
+	"description": "Professional concrete work in Utah. Driveways, patios, walkways, foundations, and stamped concrete. Built for Utah's climate."
+};
+---
+
+<ServiceLayout
+	title="Concrete Driveways, Patios & Foundations Utah | Bowka Construction"
+	description="Quality concrete work in Utah. Driveways, patios, walkways, and foundations built to last. Serving Utah County, Salt Lake County, and Davis County."
+	keywords="concrete driveway Utah, stamped concrete patio, concrete contractor Lehi, concrete work American Fork, driveway installation Utah"
+	heroImage="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+	heroImageAlt="Stamped concrete patio and walkway"
+	h1="Concrete Work in Utah"
+	intro="Driveways, patios, walkways, and foundations built to withstand Utah's freeze-thaw cycles and heavy use. We pour concrete that lasts."
+	includedItems={[
+		"Site preparation and grading",
+		"Excavation and form setup",
+		"Rebar and wire mesh reinforcement",
+		"Concrete placement and finishing",
+		"Stamped or decorative concrete options",
+		"Control joints and expansion joints",
+		"Proper curing and sealing",
+		"Cleanup and final grading"
+	]}
+	processSteps={[
+		{
+			number: "1",
+			title: "Site Assessment",
+			description: "We evaluate your site, discuss your goals (driveway, patio, walkway, etc.), and provide a detailed estimate."
+		},
+		{
+			number: "2",
+			title: "Excavation & Prep",
+			description: "We excavate to the proper depth, compact the base, and set forms. We install rebar or wire mesh for strength."
+		},
+		{
+			number: "3",
+			title: "Pour & Finish",
+			description: "We pour the concrete, finish the surface (broom, smooth, or stamped), and install control joints."
+		},
+		{
+			number: "4",
+			title: "Curing & Sealing",
+			description: "We protect the concrete while it cures and apply sealer for long-term durability."
+		}
+	]}
+	faqs={[
+		{
+			question: "How much does a concrete driveway cost in Utah?",
+			answer: "Concrete driveways typically cost $8–$15 per square foot depending on thickness, reinforcement, and finish. A standard two-car driveway (20x20, 400 sq ft) ranges from $3,200 to $6,000. Stamped or decorative concrete costs more."
+		},
+		{
+			question: "How long does concrete take to cure?",
+			answer: "Concrete reaches functional strength (safe for light foot traffic) in 24–48 hours. Full cure takes 28 days. We recommend waiting at least 7 days before parking vehicles on a new driveway."
+		},
+		{
+			question: "Will my concrete crack?",
+			answer: "Concrete will develop small cracks over time — it's the nature of the material. We minimize cracking by using proper base preparation, reinforcement (rebar or wire mesh), control joints, and proper curing. We pour thick, well-reinforced slabs designed for Utah's climate."
+		},
+		{
+			question: "What's the difference between stamped and regular concrete?",
+			answer: "Regular concrete is smooth or broom-finished. Stamped concrete is textured with patterns (stone, brick, slate) and often colored. Stamped concrete looks more decorative and is popular for patios and walkways. It costs more but adds curb appeal."
+		},
+		{
+			question: "Do you pour concrete in winter?",
+			answer: "We can pour concrete in winter with proper precautions (heated blankets, additives). However, we prefer to schedule concrete work in spring, summer, and fall for optimal curing conditions."
+		}
+	]}
+	testimonial={{
+		quote: "Professional, clean, and communicative. Our new patio and driveway turned out better than we imagined. The stamped concrete looks incredible.",
+		author: "Mike D.",
+		location: "American Fork, UT",
+		service: "Concrete"
+	}}
+	relatedServices={[
+		{ title: "Home Additions", href: "/services/additions", icon: "solar:home-add-linear" },
+		{ title: "Basement Finishing", href: "/services/basement-finishing", icon: "solar:sofa-linear" },
+		{ title: "New Construction", href: "/services/new-construction", icon: "solar:city-linear" }
+	]}
+	schema={serviceSchema}
+	breadcrumbs={[
+		{ label: "Services", href: "/services" },
+		{ label: "Concrete", href: "/services/concrete" }
+	]}
+>
+	<div class="content-prose">
+		<h2>Why Quality Concrete Matters in Utah</h2>
+		<p>
+			Utah's climate is tough on concrete. Freeze-thaw cycles, temperature swings, and snow/ice exposure can cause cracking, spalling, and settling if concrete isn't poured properly. We use the right mix design, proper reinforcement, and correct curing techniques to ensure your concrete lasts.
+		</p>
+
+		<h2>Concrete Services We Offer</h2>
+		<ul>
+			<li><strong>Driveways</strong> — Standard or stamped, single or multi-car. We pour driveways that handle Utah winters.</li>
+			<li><strong>Patios</strong> — Outdoor living spaces, fire pit surrounds, and entertaining areas. Smooth, broom, or stamped finishes.</li>
+			<li><strong>Walkways & Sidewalks</strong> — Front entry walks, side yard paths, and backyard trails.</li>
+			<li><strong>Foundations</strong> — Slab and stem wall foundations for additions, garages, and new construction.</li>
+			<li><strong>Basement Floors</strong> — Concrete floor installation or repair for unfinished basements.</li>
+		</ul>
+
+		<h2>Stamped & Decorative Concrete</h2>
+		<p>
+			Stamped concrete replicates the look of stone, brick, or tile at a fraction of the cost. We offer a variety of patterns and integral color options. Popular choices: ashlar slate, flagstone, cobblestone, and wood plank. Stamped concrete is sealed for durability and is a popular choice for patios and walkways.
+		</p>
+
+		<h2>Proper Base Preparation</h2>
+		<p>
+			The longevity of your concrete starts below the surface. We excavate to the proper depth, install a compacted gravel base (4–6 inches), and ensure proper drainage. We don't skip steps. Many concrete failures are caused by poor base prep — we do it right.
+		</p>
+	</div>
+</ServiceLayout>

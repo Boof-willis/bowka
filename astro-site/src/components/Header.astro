@@ -1,0 +1,70 @@
+---
+---
+
+<header class="fixed w-full top-0 z-50 mix-blend-difference px-6 pt-6 pb-6 transition-all duration-300">
+	<div class="max-w-[1920px] mx-auto flex items-center relative">
+		<!-- Logo (Left) -->
+		<a href="/" class="flex items-center gap-2 group z-20 mr-auto reveal">
+			<img src="/bowka-logo-no-construction-04.svg" alt="Bowka Construction" class="h-8 w-auto group-hover:opacity-80 transition-opacity" style="filter: brightness(0) invert(1);" />
+		</a>
+
+		<!-- Desktop Menu (Center Absolute) -->
+		<nav class="hidden md:flex gap-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 reveal delay-100">
+			<a href="/services" class="text-sm font-medium tracking-wide text-white/80 hover:text-white transition-colors uppercase">Services</a>
+			<a href="/about" class="text-sm font-medium tracking-wide text-white/80 hover:text-white transition-colors uppercase">About</a>
+			<a href="/areas-we-serve" class="text-sm font-medium tracking-wide text-white/80 hover:text-white transition-colors uppercase">Service Areas</a>
+		</nav>
+
+		<!-- CTA & Mobile Toggle (Right) -->
+		<div class="flex items-center gap-6 z-20 ml-auto reveal delay-200">
+			<a href="tel:8015550123" class="hidden md:flex items-center gap-2 text-sm font-medium tracking-wide text-white/90 hover:text-white transition-colors">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+				(801) 555-0123
+			</a>
+			<a href="/#estimate" class="hidden md:inline-flex items-center justify-center px-6 py-2 text-sm font-medium bg-white text-black border border-white rounded-full hover:bg-neutral-200 transition-all duration-300 uppercase tracking-wide">
+				Start Project
+			</a>
+
+			<!-- Mobile Menu Button -->
+			<button type="button" class="md:hidden text-white p-2 hover:opacity-70 transition-opacity focus:outline-none" id="mobile-menu-btn" aria-label="Toggle menu">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+			</button>
+		</div>
+	</div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-black transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden pt-32 px-6 flex flex-col gap-8">
+	<a href="/services" class="text-3xl font-light text-white tracking-tight hover:text-neutral-400 transition-colors mobile-menu-link">Services</a>
+	<a href="/about" class="text-3xl font-light text-white tracking-tight hover:text-neutral-400 transition-colors mobile-menu-link">About</a>
+	<a href="/areas-we-serve" class="text-3xl font-light text-white tracking-tight hover:text-neutral-400 transition-colors mobile-menu-link">Service Areas</a>
+	<a href="/#estimate" class="mt-8 w-full text-center px-6 py-4 rounded-full bg-white text-black font-medium text-lg tracking-wide uppercase mobile-menu-link hover:bg-neutral-200 transition-colors">Start Project</a>
+</div>
+
+<script>
+	// Mobile Menu Toggle
+	function toggleMobileMenu() {
+		const menu = document.getElementById('mobile-menu');
+		const btn = document.getElementById('mobile-menu-btn');
+		
+		if (!menu) return;
+		
+		const isOpen = !menu.classList.contains('translate-x-full');
+		if (isOpen) {
+			menu.classList.add('translate-x-full');
+			document.body.style.overflow = 'auto';
+			// Change icon back to menu
+			if(btn) btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>';
+		} else {
+			menu.classList.remove('translate-x-full');
+			document.body.style.overflow = 'hidden';
+			// Change icon to X
+			if(btn) btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+		}
+	}
+
+	document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
+	document.querySelectorAll('.mobile-menu-link').forEach((link) => {
+		link.addEventListener('click', toggleMobileMenu);
+	});
+</script>

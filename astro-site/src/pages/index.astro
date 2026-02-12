@@ -1,0 +1,494 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
+import MultistepSurvey from '../components/MultistepSurvey.astro';
+
+// LocalBusiness Schema for Homepage
+const schema = [
+	{
+		"@context": "https://schema.org",
+		"@type": "GeneralContractor",
+		"name": "Bowka Construction",
+		"description": "Licensed B100 general contractor serving Utah County, Salt Lake County, and Davis County. Specializing in basement finishing, remodeling, concrete, additions, and new construction.",
+		"url": "https://bowkaconstruction.com",
+		"telephone": "+1-801-555-0123",
+		"address": {
+			"@type": "PostalAddress",
+			"addressRegion": "UT",
+			"addressCountry": "US"
+		},
+		"areaServed": [
+			{ "@type": "County", "name": "Utah County", "containedInPlace": { "@type": "State", "name": "Utah" } },
+			{ "@type": "County", "name": "Salt Lake County", "containedInPlace": { "@type": "State", "name": "Utah" } },
+			{ "@type": "County", "name": "Davis County", "containedInPlace": { "@type": "State", "name": "Utah" } }
+		],
+		"hasCredential": [
+			{ "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "B100 General Contractor License" }
+		],
+		"founder": { "@type": "Person", "name": "Brady Berry" },
+		"sameAs": []
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+			{
+				"@type": "Question",
+				"name": "How much does it cost to finish a basement in Utah?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Basement finishing costs in Utah typically range from $25,000 to $65,000+ depending on square footage, complexity, and finishes. A standard 1,000 sq ft basement with a bedroom, bathroom, and living area usually falls in the $35,000–$50,000 range. We provide free, itemized estimates so you know exactly what to expect — no hidden costs."
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "How long does a typical remodel take?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Timeline varies by project scope. A bathroom remodel typically takes 2–4 weeks, a kitchen remodel 4–8 weeks, and a full basement finish 4–8 weeks. During your consultation, we'll provide a detailed timeline with milestones so you always know what's coming next."
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "Are you licensed and insured?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Yes. Bowka Construction holds a B100 General Contractor license in the state of Utah and is fully insured. Brady Berry is also certified in asbestos and lead safety, which is especially important for remodeling older homes."
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "Do you handle permits?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Absolutely. We handle all permitting and inspections required by your local municipality. Whether your project is in Provo, Salt Lake City, or anywhere along the Wasatch Front, we know the local codes and manage the process so you don't have to."
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "What areas do you serve?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "We serve all cities within Utah County, Salt Lake County, and Davis County including Provo, Orem, Lehi, American Fork, Saratoga Springs, Salt Lake City, Sandy, Draper, South Jordan, Bountiful, Layton, Kaysville, and everywhere in between."
+				}
+			}
+		]
+	}
+];
+
+const projects = [
+	{
+		image: "/images/projects/basement-theater.jpg",
+		category: "Basement Finishing",
+		title: "Lehi Residence",
+		alt: "Finished basement with home theater"
+	},
+	{
+		image: "/images/projects/kitchen-remodel.jpg",
+		category: "Kitchen Remodel",
+		title: "Draper Modern",
+		alt: "Modern kitchen remodel with white cabinets"
+	},
+	{
+		image: "/images/projects/concrete-patio.jpg",
+		category: "Concrete",
+		title: "Highland Exterior",
+		alt: "Stamped concrete patio"
+	},
+	{
+		image: "/images/projects/luxury-bathroom.jpg",
+		category: "Remodel",
+		title: "Orem Estate",
+		alt: "Luxury bathroom remodel"
+	}
+];
+---
+
+<BaseLayout 
+	title="Bowka Construction | Utah General Contractor"
+	description="Licensed B100 general contractor serving Utah County, Salt Lake County, and Davis County. Quality basement finishing, kitchen and bathroom remodeling, concrete work, additions, and new construction."
+	keywords="general contractor Utah, basement finishing Utah, Utah County contractor, Salt Lake County contractor, kitchen remodeling Utah, bathroom remodeling, concrete work Utah, home additions, new construction Utah, B100 contractor"
+	schema={schema}
+>
+	<Header />
+
+	<!-- 1. HERO SECTION -->
+	<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+		<!-- Background Image -->
+		<div class="absolute inset-0 z-0">
+			<!-- Using a high-quality abstract/architectural background similar to the template -->
+			<img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop" class="w-full h-full object-cover opacity-50 scale-105 animate-[pulse_10s_ease-in-out_infinite]" alt="Modern Architectural Home">
+			<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black"></div>
+		</div>
+
+		<div class="relative z-10 container mx-auto px-6 md:px-12 text-center flex flex-col items-center">
+			
+			<!-- Headline -->
+			<h1 class="reveal delay-200 text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter leading-[0.9] text-white mb-8">
+				Utah's Premier <br> General Contractor.
+			</h1>
+
+			<!-- Sub-headline -->
+			<p class="reveal delay-500 text-lg md:text-xl text-neutral-300 max-w-2xl font-light leading-relaxed mb-12">
+				B100 licensed. Fully insured. Specializing in basement finishing, kitchen and bathroom remodeling, concrete work, and custom homes across Utah County, Salt Lake County, and Davis County.
+			</p>
+
+			<!-- Trust Badges -->
+			<div class="reveal delay-700 flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-80 mb-16">
+				<span class="text-xs tracking-widest uppercase border-b border-white/20 pb-1">B100 Licensed</span>
+				<span class="text-xs tracking-widest uppercase border-b border-white/20 pb-1">Fully Insured</span>
+				<span class="text-xs tracking-widest uppercase border-b border-white/20 pb-1">Asbestos Certified</span>
+				<span class="text-xs tracking-widest uppercase border-b border-white/20 pb-1">Locally Owned</span>
+			</div>
+
+			<!-- CTA -->
+			<div class="reveal delay-700 flex flex-col md:flex-row items-center gap-6">
+				<a href="#estimate" class="px-8 py-3 bg-white text-black text-sm font-medium uppercase tracking-widest hover:bg-neutral-200 transition-colors rounded-full">
+					Get an Estimate
+				</a>
+				<a href="#portfolio" class="group flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">
+					<span>Explore The Work</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down w-4 h-4 group-hover:translate-y-1 transition-transform duration-500"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 2. TESTIMONIAL SECTION -->
+	<section class="bg-white text-black py-32 md:py-48 px-6 md:px-12 relative">
+		<div class="container mx-auto max-w-4xl">
+			<div class="flex flex-col items-center text-center">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote w-8 h-8 mb-8 text-neutral-300 reveal"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
+				
+				<h2 class="sr-only">What Our Clients Say</h2>
+				<blockquote class="reveal text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight mb-12">
+					"Bowka didn't just finish our basement; they created a space our family loves. The quality is incredible and Brady kept us informed every step."
+				</blockquote>
+
+				<div class="reveal delay-200 flex flex-col items-center gap-1">
+					<span class="text-sm font-semibold tracking-widest uppercase text-neutral-900">Josh & Sarah M.</span>
+					<span class="text-xs font-medium text-neutral-500">Lehi, UT</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 3. GALLERY SECTION -->
+	<section id="portfolio" class="bg-black text-white py-32 md:py-40 px-6 md:px-12 border-t border-neutral-900">
+		<div class="container mx-auto">
+			<div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
+				<h2 class="text-4xl md:text-5xl font-semibold tracking-tight">Selected Works</h2>
+				<a href="/services" class="hidden md:flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm uppercase tracking-wide mt-4 md:mt-0">
+					View All Services <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+				</a>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+			<a href="/services/basement-finishing" class="group cursor-pointer reveal delay-100">
+				<div class="overflow-hidden aspect-[4/3] mb-6 relative">
+					<img src={projects[0].image} alt={projects[0].alt} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out">
+				</div>
+				<div class="flex justify-between items-start border-t border-neutral-800 pt-4">
+					<div>
+						<h3 class="text-xl font-medium tracking-tight mb-1">{projects[0].title}</h3>
+						<p class="text-sm text-neutral-500">{projects[0].category}</p>
+					</div>
+					<span class="text-sm text-neutral-500 group-hover:text-white transition-colors">View</span>
+				</div>
+			</a>
+			
+			<a href="/services/kitchen-remodeling" class="group cursor-pointer md:mt-24 reveal delay-200">
+				<div class="overflow-hidden aspect-[4/3] mb-6 relative">
+					<img src={projects[1].image} alt={projects[1].alt} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out">
+				</div>
+				<div class="flex justify-between items-start border-t border-neutral-800 pt-4">
+					<div>
+						<h3 class="text-xl font-medium tracking-tight mb-1">{projects[1].title}</h3>
+						<p class="text-sm text-neutral-500">{projects[1].category}</p>
+					</div>
+					<span class="text-sm text-neutral-500 group-hover:text-white transition-colors">View</span>
+				</div>
+			</a>
+			
+			<a href="/services/concrete" class="group cursor-pointer reveal delay-100">
+				<div class="overflow-hidden aspect-[4/3] mb-6 relative">
+					<img src={projects[2].image} alt={projects[2].alt} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out">
+				</div>
+				<div class="flex justify-between items-start border-t border-neutral-800 pt-4">
+					<div>
+						<h3 class="text-xl font-medium tracking-tight mb-1">{projects[2].title}</h3>
+						<p class="text-sm text-neutral-500">{projects[2].category}</p>
+					</div>
+					<span class="text-sm text-neutral-500 group-hover:text-white transition-colors">View</span>
+				</div>
+			</a>
+			
+			<a href="/services/bathroom-remodeling" class="group cursor-pointer md:mt-24 reveal delay-200">
+				<div class="overflow-hidden aspect-[4/3] mb-6 relative">
+					<img src={projects[3].image} alt={projects[3].alt} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out">
+				</div>
+				<div class="flex justify-between items-start border-t border-neutral-800 pt-4">
+					<div>
+						<h3 class="text-xl font-medium tracking-tight mb-1">{projects[3].title}</h3>
+						<p class="text-sm text-neutral-500">{projects[3].category}</p>
+					</div>
+					<span class="text-sm text-neutral-500 group-hover:text-white transition-colors">View</span>
+				</div>
+			</a>
+			</div>
+			
+			<div class="mt-16 md:hidden text-center reveal">
+				<a href="/services" class="inline-flex items-center gap-2 text-white border-b border-white/30 pb-1 text-sm uppercase tracking-wide">
+					View All Services <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 4. PROCESS SECTION -->
+	<section class="bg-white text-black py-32 md:py-40 px-6 md:px-12">
+		<div class="container mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+				
+				<!-- Section Title -->
+				<div class="lg:col-span-4 reveal">
+					<h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">The Methodology</h2>
+					<p class="text-lg text-neutral-500 font-light leading-relaxed">
+						Quality isn't an accident. Our process is a linear progression from consultation to completion, removing stress from construction.
+					</p>
+				</div>
+
+				<!-- Steps -->
+				<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+					
+					<div class="group reveal delay-100">
+						<div class="text-6xl font-light text-neutral-200 mb-6 group-hover:text-black transition-colors duration-500">01</div>
+						<h3 class="text-xl font-semibold tracking-tight mb-3">Consultation</h3>
+						<p class="text-base text-neutral-500 leading-relaxed">
+							We align your vision with site possibilities and budget realities before a single hammer swings.
+						</p>
+					</div>
+
+					<div class="group reveal delay-200">
+						<div class="text-6xl font-light text-neutral-200 mb-6 group-hover:text-black transition-colors duration-500">02</div>
+						<h3 class="text-xl font-semibold tracking-tight mb-3">Planning</h3>
+						<p class="text-base text-neutral-500 leading-relaxed">
+							Detailed estimates, permit handling, and material selection. We plan the work so we can work the plan.
+						</p>
+					</div>
+
+					<div class="group reveal delay-300">
+						<div class="text-6xl font-light text-neutral-200 mb-6 group-hover:text-black transition-colors duration-500">03</div>
+						<h3 class="text-xl font-semibold tracking-tight mb-3">Execution</h3>
+						<p class="text-base text-neutral-500 leading-relaxed">
+							Rigorous project management. Regular updates. A construction phase defined by order and craftsmanship.
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 5. SERVICES SECTION -->
+	<section class="bg-black text-white py-32 md:py-40 px-6 md:px-12 border-t border-neutral-900">
+		<div class="container mx-auto">
+			<div class="mb-24 max-w-2xl reveal">
+				<h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">Capabilities</h2>
+				<p class="text-xl text-neutral-400 font-light">
+					A holistic approach to residential construction in Utah.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-900 border border-neutral-900">
+				<!-- Service 1 -->
+				<a href="/services/basement-finishing" class="bg-black p-12 hover:bg-neutral-950 transition-colors duration-500 group reveal">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sofa w-8 h-8 text-neutral-500 mb-6 group-hover:text-white transition-colors"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"></path><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"></path><path d="M4 18v2"></path><path d="M20 18v2"></path><path d="M12 4v9"></path></svg>
+					<h3 class="text-lg font-semibold tracking-tight mb-3">Basement Finishing</h3>
+					<p class="text-sm text-neutral-400 leading-relaxed">Transforming unfinished space into comfortable living areas, theaters, and apartments.</p>
+				</a>
+
+				<!-- Service 2 -->
+				<a href="/services/kitchen-remodeling" class="bg-black p-12 hover:bg-neutral-950 transition-colors duration-500 group reveal delay-100">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-neutral-500 mb-6 group-hover:text-white transition-colors"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+					<h3 class="text-lg font-semibold tracking-tight mb-3">Kitchen Remodeling</h3>
+					<p class="text-sm text-neutral-400 leading-relaxed">Complete kitchen transformations from layout redesign to cabinet and countertop installation.</p>
+				</a>
+
+				<!-- Service 3 -->
+				<a href="/services/bathroom-remodeling" class="bg-black p-12 hover:bg-neutral-950 transition-colors duration-500 group reveal delay-200">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-neutral-500 mb-6 group-hover:text-white transition-colors"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" x2="8" y1="5" y2="7"/><line x1="2" x2="22" y1="12" y2="12"/><line x1="7" x2="7" y1="19" y2="21"/><line x1="17" x2="17" y1="19" y2="21"/></svg>
+					<h3 class="text-lg font-semibold tracking-tight mb-3">Bathroom Remodeling</h3>
+					<p class="text-sm text-neutral-400 leading-relaxed">Modern bathroom renovations with tile, fixtures, vanities, and accessibility options.</p>
+				</a>
+
+				<!-- Service 4 -->
+				<a href="/services/remodeling" class="bg-black p-12 hover:bg-neutral-950 transition-colors duration-500 group reveal">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hammer w-8 h-8 text-neutral-500 mb-6 group-hover:text-white transition-colors"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"></path><path d="m18 15 4-4"></path><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"></path></svg>
+					<h3 class="text-lg font-semibold tracking-tight mb-3">Whole-Home Renovation</h3>
+					<p class="text-sm text-neutral-400 leading-relaxed">Full home remodels and space transformations that modernize and improve value.</p>
+				</a>
+
+				<!-- Service 5 -->
+				<a href="/services/concrete" class="bg-black p-12 hover:bg-neutral-950 transition-colors duration-500 group reveal delay-100">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers w-8 h-8 text-neutral-500 mb-6 group-hover:text-white transition-colors"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>
+					<h3 class="text-lg font-semibold tracking-tight mb-3">Concrete</h3>
+					<p class="text-sm text-neutral-400 leading-relaxed">Driveways, patios, and foundations built to withstand Utah's climate.</p>
+				</a>
+
+				<!-- Service 6 -->
+				<a href="/services/additions" class="bg-black p-12 hover:bg-neutral-950 transition-colors duration-500 group reveal delay-200">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home w-8 h-8 text-neutral-500 mb-6 group-hover:text-white transition-colors"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+					<h3 class="text-lg font-semibold tracking-tight mb-3">Additions</h3>
+					<p class="text-sm text-neutral-400 leading-relaxed">Expanding your footprint with mother-in-law suites, garages, and room additions.</p>
+				</a>
+
+				<!-- Service 7 -->
+				<a href="/services/new-construction" class="bg-black p-12 hover:bg-neutral-950 transition-colors duration-500 group reveal">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-ruler w-8 h-8 text-neutral-500 mb-6 group-hover:text-white transition-colors"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"></path><path d="m8 6 2-2"></path><path d="m18 16 2-2"></path><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"></path><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>
+					<h3 class="text-lg font-semibold tracking-tight mb-3">New Construction</h3>
+					<p class="text-sm text-neutral-400 leading-relaxed">Custom homes built from the ground up with full project management.</p>
+				</a>
+
+				<!-- Service 8 -->
+				<a href="/#estimate" class="bg-black p-12 hover:bg-neutral-950 transition-colors duration-500 group reveal delay-100">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key w-8 h-8 text-neutral-500 mb-6 group-hover:text-white transition-colors"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"></path><path d="m21 2-9.6 9.6"></path><circle cx="7.5" cy="15.5" r="5.5"></circle></svg>
+					<h3 class="text-lg font-semibold tracking-tight mb-3">Get Started</h3>
+					<p class="text-sm text-neutral-400 leading-relaxed">Ready to build? Let's discuss your project and get you a free estimate.</p>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 6. MEET THE OWNER SECTION -->
+	<section class="bg-white text-black py-32 md:py-40 px-6 md:px-12">
+		<div class="container mx-auto">
+			<div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+				
+			<!-- Image -->
+			<div class="w-full lg:w-1/2 reveal">
+				<div class="aspect-[4/5] bg-neutral-100 relative overflow-hidden">
+					<img src="/brady and family.jpeg" alt="Brady Berry and Family" class="w-full h-full object-cover">
+				</div>
+			</div>
+
+				<!-- Content -->
+				<div class="w-full lg:w-1/2 reveal delay-200">
+					<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-6">Owner & Founder</span>
+					<h2 class="text-4xl md:text-6xl font-semibold tracking-tight mb-8">Brady Berry</h2>
+					
+					<div class="space-y-6 text-lg md:text-xl font-light leading-relaxed text-neutral-800">
+						<p>
+							"I founded Bowka Construction on a simple principle: treat every home like it's your own."
+						</p>
+						<p class="text-neutral-500 text-base">
+							With a B100 license and specialized certifications, we bring both the credentials and the care that Utah families deserve. Whether it's finishing a basement or building new, we are committed to quality work that strengthens our community.
+						</p>
+					</div>
+
+					<div class="mt-12 pt-12 border-t border-neutral-200">
+						<a href="/about" class="text-sm font-semibold uppercase tracking-widest text-black hover:text-neutral-500 transition-colors">Read Full Story →</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- 7. FAQ SECTION -->
+	<section class="bg-white text-black py-24 md:py-32 px-6 md:px-12">
+		<div class="container mx-auto max-w-4xl">
+			<div class="text-center mb-16 reveal">
+				<span class="block text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Common Questions</span>
+				<h2 class="text-4xl md:text-5xl font-semibold tracking-tight">Frequently Asked</h2>
+			</div>
+			<div class="space-y-0 border-t border-neutral-200 reveal delay-100">
+				<details class="group border-b border-neutral-200">
+					<summary class="flex justify-between items-center py-6 cursor-pointer text-lg font-medium tracking-tight">
+						How much does it cost to finish a basement in Utah?
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 ml-4 text-neutral-400 group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+					</summary>
+					<div class="pb-6 text-neutral-600 font-light leading-relaxed max-w-3xl">
+						Basement finishing costs in Utah typically range from $25,000 to $65,000+ depending on square footage, complexity, and finishes. A standard 1,000 sq ft basement with a bedroom, bathroom, and living area usually falls in the $35,000–$50,000 range. We provide free, itemized estimates so you know exactly what to expect — no hidden costs.
+					</div>
+				</details>
+				<details class="group border-b border-neutral-200">
+					<summary class="flex justify-between items-center py-6 cursor-pointer text-lg font-medium tracking-tight">
+						How long does a typical remodel take?
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 ml-4 text-neutral-400 group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+					</summary>
+					<div class="pb-6 text-neutral-600 font-light leading-relaxed max-w-3xl">
+						Timeline varies by project scope. A bathroom remodel typically takes 2–4 weeks, a kitchen remodel 4–8 weeks, and a full basement finish 4–8 weeks. During your consultation, we'll provide a detailed timeline with milestones so you always know what's coming next.
+					</div>
+				</details>
+				<details class="group border-b border-neutral-200">
+					<summary class="flex justify-between items-center py-6 cursor-pointer text-lg font-medium tracking-tight">
+						Are you licensed and insured?
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 ml-4 text-neutral-400 group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+					</summary>
+					<div class="pb-6 text-neutral-600 font-light leading-relaxed max-w-3xl">
+						Yes. Bowka Construction holds a B100 General Contractor license in the state of Utah and is fully insured. Brady Berry is also certified in asbestos and lead safety, which is especially important for remodeling older homes. We're happy to provide proof of licensing and insurance before any project begins.
+					</div>
+				</details>
+				<details class="group border-b border-neutral-200">
+					<summary class="flex justify-between items-center py-6 cursor-pointer text-lg font-medium tracking-tight">
+						Do you handle permits?
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 ml-4 text-neutral-400 group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+					</summary>
+					<div class="pb-6 text-neutral-600 font-light leading-relaxed max-w-3xl">
+						Absolutely. We handle all permitting and inspections required by your local municipality. Whether your project is in Provo, Salt Lake City, or anywhere along the Wasatch Front, we know the local codes and manage the process so you don't have to.
+					</div>
+				</details>
+				<details class="group border-b border-neutral-200">
+					<summary class="flex justify-between items-center py-6 cursor-pointer text-lg font-medium tracking-tight">
+						What areas do you serve?
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 ml-4 text-neutral-400 group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+					</summary>
+					<div class="pb-6 text-neutral-600 font-light leading-relaxed max-w-3xl">
+						We serve all cities within Utah County, Salt Lake County, and Davis County. That includes Provo, Orem, Lehi, American Fork, Saratoga Springs, Salt Lake City, Sandy, Draper, South Jordan, Bountiful, Layton, Kaysville, and everywhere in between. If you're on the Wasatch Front, we can help.
+					</div>
+				</details>
+			</div>
+		</div>
+	</section>
+
+	<!-- 8. FINAL CTA SECTION WITH FORM -->
+	<section id="estimate" class="bg-neutral-900 text-white py-24 md:py-32 px-6 md:px-12 border-t border-neutral-800">
+		<div class="container mx-auto max-w-5xl">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+				<!-- Left: Copy -->
+				<div class="reveal">
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
+						Your Vision.<br>Our Craft.
+					</h2>
+					<p class="text-lg text-neutral-400 font-light leading-relaxed mb-8">
+						Tell us about your project. It takes 30 seconds and we'll get back to you within 24 hours with a free estimate.
+					</p>
+					<div class="flex flex-col gap-4 text-sm text-neutral-500">
+						<div class="flex items-center gap-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-400 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span>Free estimate — no obligation</span>
+						</div>
+						<div class="flex items-center gap-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-400 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span>Response within 24 hours</span>
+						</div>
+						<div class="flex items-center gap-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-400 flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+							<span>B100 licensed & fully insured</span>
+						</div>
+					</div>
+				</div>
+				<!-- Right: Multistep Survey -->
+				<div class="reveal delay-200">
+					<MultistepSurvey />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+	<StickyMobileCTA />
+</BaseLayout>
